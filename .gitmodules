@@ -1,0 +1,27 @@
+[submodule "Packages/unity-toolbar-buttons"]
+	path = Packages/unity-toolbar-buttons
+	url = https://github.com/BennyKok/unity-toolbar-buttons.git
+[submodule "Packages/unity-bootstrap"]
+	path = Packages/unity-bootstrap
+	url = https://github.com/BennyKok/unity-bootstrap.git
+[submodule "Packages/unity-hierarchy-header"]
+	path = Packages/unity-hierarchy-header
+	url = https://github.com/BennyKok/unity-hierarchy-header.git
+[submodule "Packages/unity-searchable-event-drawer"]
+	path = Packages/unity-searchable-event-drawer
+	url = https://github.com/BennyKok/unity-searchable-event-drawer.git
+[submodule "Packages/unity-runtime-debug-action"]
+	path = Packages/unity-runtime-debug-action
+	url = https://github.com/BennyKok/unity-runtime-debug-action.git
+[submodule "Packages/untiy-timeline-action"]
+	path = Packages/untiy-timeline-action
+	url = https://github.com/BennyKok/unity-timeline-action.git
+[submodule "Packages/unity-damage-display"]
+	path = Packages/unity-damage-display
+	url = https://github.com/BennyKok/unity-damage-display.git
+[submodule "Packages/unity-combat-system"]
+	path = Packages/unity-combat-system
+	url = https://github.com/BennyKok/unity-combat-system.git
+[submodule "Packages/unity-reactive-property"]
+	path = Packages/unity-reactive-property
+	url = https://github.com/BennyKok/unity-reactive-property.git
