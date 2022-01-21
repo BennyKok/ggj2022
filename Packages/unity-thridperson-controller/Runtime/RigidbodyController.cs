@@ -391,7 +391,8 @@ public class RigidbodyController : MonoBehaviour
             {
                 if (shouldJump)
                 {
-                    characterAnimator.OnJump();
+                    if (characterAnimator)
+                        characterAnimator.OnJump();
                     onJump.Invoke();
                     jumpTime = Time.time;
                     targetBody.AddForce(targetBody.transform.up * jumpForce, ForceMode.VelocityChange);
