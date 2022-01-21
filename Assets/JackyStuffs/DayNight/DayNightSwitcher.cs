@@ -10,10 +10,9 @@ public class DayNightSwitcher : MonoBehaviour
     public enum DayNightEnum { day, night };
     public DayNightEnum currentDayNight;
 
-    public Skybox day, night;
-
     public UnityEvent DayNightSwitchEvent;
 
+    private Camera cam;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -26,18 +25,17 @@ public class DayNightSwitcher : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         currentDayNight = DayNightEnum.day;
+        cam = Camera.main;
     }
 
     public DayNightEnum SwitchDayNight()
     {
         if (currentDayNight == DayNightEnum.day)
         {
-            RenderSettings.skybox = night.material;
             currentDayNight = DayNightEnum.night;
         }
         else
         {
-            RenderSettings.skybox = day.material;
             currentDayNight = DayNightEnum.day;
         }
 
@@ -46,21 +44,16 @@ public class DayNightSwitcher : MonoBehaviour
         return currentDayNight;
     }
 
-    public void SwitchDayNightSpecific(DayNightEnum dayNight)
+    public void SwitchToSpecificDayNight(DayNightEnum dayNight)
     {
-        if (currentDayNight == DayNightEnum.day)
+        if (dayNight == DayNightEnum.day)
         {
-            RenderSettings.skybox = night.material;
             currentDayNight = DayNightEnum.night;
         }
         else
         {
-            RenderSettings.skybox = day.material;
             currentDayNight = DayNightEnum.day;
         }
-
-        DayNightSwitchEvent?.Invoke();
-        currentDayNight = dayNight;
+        SwitchDayNight();
     }
-
 }
