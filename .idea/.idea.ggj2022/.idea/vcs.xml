@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/unity-bootstrap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/unity-combat-system" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/unity-damage-display" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/unity-hierarchy-header" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/unity-reactive-property" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/unity-runtime-debug-action" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/unity-searchable-event-drawer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/unity-toolbar-buttons" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/untiy-timeline-action" vcs="Git" />
+  </component>
+</project>
