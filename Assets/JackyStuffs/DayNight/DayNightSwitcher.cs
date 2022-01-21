@@ -32,10 +32,12 @@ public class DayNightSwitcher : MonoBehaviour
     {
         if (currentDayNight == DayNightEnum.day)
         {
+            cam.backgroundColor = new Color32(130, 160, 210, 255);
             currentDayNight = DayNightEnum.night;
         }
         else
         {
+            cam.backgroundColor = new Color32(20, 17, 51, 255);
             currentDayNight = DayNightEnum.day;
         }
 
