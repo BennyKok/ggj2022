@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2830510603194310750}
   - component: {fileID: 5955163148103682113}
+  - component: {fileID: 4216175382004532734}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -83,6 +84,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4216175382004532734
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4606667274333597881}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bde3caf581f9b574a9f10f803ab681a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5932055041693771352
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +115,6 @@ GameObject:
   - component: {fileID: 5932055041693771367}
   - component: {fileID: 5932055041693771366}
   - component: {fileID: 5932055041693771364}
-  - component: {fileID: 5932055041693771365}
   - component: {fileID: 5932055041693771362}
   m_Layer: 0
   m_Name: Character
@@ -200,7 +219,8 @@ MonoBehaviour:
   acceleration: 4
   deceleration: 4
   speed: 8
-  rotateSpeed: 540
+  instantRotate: 1
+  rotateSpeed: 800
   jumpForce: 5
   jumpDuration: 1.5
   stickToGroundForce: 0.5
@@ -243,25 +263,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &5932055041693771365
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5932055041693771352}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5932055041693771362
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -33,6 +33,7 @@ public class RigidbodyController : MonoBehaviour
     public float acceleration = 4f;
     public float deceleration = 4f;
     public float speed = 8.0f;
+    public bool instantRotate = false;
     public float rotateSpeed = 540;
 
     [DebugAction] public float jumpForce = 5f;
@@ -458,7 +459,16 @@ public class RigidbodyController : MonoBehaviour
         }
 
         Quaternion to = Quaternion.LookRotation(moveDirection);
-        targetBody.MoveRotation(Quaternion.RotateTowards(transform.rotation, to, degreesPerSecond * Time.deltaTime));
+        
+
+        if (instantRotate)
+        {
+            targetBody.MoveRotation(to);
+        }
+        else
+        {
+            targetBody.MoveRotation(Quaternion.RotateTowards(transform.rotation, to, degreesPerSecond * Time.deltaTime));
+        }
 
         return transform.rotation == to;
     }
