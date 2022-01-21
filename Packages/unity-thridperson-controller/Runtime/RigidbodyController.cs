@@ -150,6 +150,7 @@ public class RigidbodyController : MonoBehaviour
 
     private void Update()
     {
+        if (targetCamera == null) targetCamera = Camera.main;
         //isAiming && 
         if (customAimTransform)
         {

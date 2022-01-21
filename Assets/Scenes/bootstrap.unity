@@ -835,14 +835,6 @@ PrefabInstance:
       propertyPath: m_UIInputModule
       value: 
       objectReference: {fileID: 615810580}
-    - target: {fileID: 5932055041693771364, guid: 413f264d375922e43997efae88003554, type: 3}
-      propertyPath: m_Radius
-      value: 0.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 5932055041693771367, guid: 413f264d375922e43997efae88003554, type: 3}
-      propertyPath: m_Constraints
-      value: 120
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413f264d375922e43997efae88003554, type: 3}
 --- !u!1001 &9028035701560536312
