@@ -219,7 +219,7 @@ MonoBehaviour:
   acceleration: 4
   deceleration: 4
   speed: 8
-  instantRotate: 1
+  stopRotateOnMove: 0
   rotateSpeed: 800
   jumpForce: 5
   jumpDuration: 1.5
