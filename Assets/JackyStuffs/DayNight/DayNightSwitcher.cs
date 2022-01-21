@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 public class DayNightSwitcher : MonoBehaviour
 {
-    public delegate void SwitchDayNightDelegate();
-    public SwitchDayNightDelegate SwitchDatNightEvent;
+    public UnityEvent DayNightSwitchEvent;
 
     public static DayNightSwitcher Instance;
 
@@ -38,14 +38,14 @@ public class DayNightSwitcher : MonoBehaviour
             currentDayNight = DayNightEnum.day;
         }
 
-        SwitchDatNightEvent?.Invoke();
+        DayNightSwitchEvent?.Invoke();
 
         return currentDayNight;
     }
 
     public void SwitchDayNightSpecific(DayNightEnum dayNight)
     {
-        SwitchDatNightEvent?.Invoke();
+        DayNightSwitchEvent?.Invoke();
         currentDayNight = dayNight;
     }
 }
