@@ -879,7 +879,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.59099483, y: 1}
+    m_SensorSize: {x: 1.2227722, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -966,13 +966,5 @@ PrefabInstance:
       propertyPath: m_UIInputModule
       value: 
       objectReference: {fileID: 615810580}
-    - target: {fileID: 5932055041693771367, guid: 413f264d375922e43997efae88003554, type: 3}
-      propertyPath: m_Constraints
-      value: 114
-      objectReference: {fileID: 0}
-    - target: {fileID: 5955163148103682113, guid: 413f264d375922e43997efae88003554, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -7398203859056804815, guid: 9ef7f527ea388384eaf5918481c30f23, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413f264d375922e43997efae88003554, type: 3}
