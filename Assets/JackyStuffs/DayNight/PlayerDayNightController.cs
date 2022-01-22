@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 using System.Threading;
+using UnityEngine.Events;
 
 public class PlayerDayNightController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerDayNightController : MonoBehaviour
     public SpriteRenderer orbSpriteRenderer;
     public Sprite dayOrb, nightOrb;
     public bool isCooldowning;
+
+    public UnityEvent onSwitch;
 
     private void Awake()
     {
@@ -37,6 +40,7 @@ public class PlayerDayNightController : MonoBehaviour
                 staffAnimCancelSource.Dispose();
                 staffAnimCancelSource = null;
             }
+            onSwitch.Invoke();
             staffAnimCancelSource = new CancellationTokenSource();
             PerformStaffAnimation(staffAnimCancelSource.Token);
 
