@@ -61,6 +61,7 @@ public class ai : MonoBehaviour
                         {
                             changeDirectionTime = Time.time;
                             directionX = -directionX;
+                            playerTransform.transform.localScale = new Vector3(-directionX, 1, 1);
                         }
                     }
                 }
