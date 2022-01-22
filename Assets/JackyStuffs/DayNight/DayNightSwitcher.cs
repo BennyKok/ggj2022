@@ -2,30 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using UnityEngine.Events;
 
 public class DayNightSwitcher : MonoBehaviour
 {
     public static DayNightSwitcher Instance;
     public enum DayNightEnum { day, night };
-    public DayNightEnum currentDayNight;
-
-    public UnityEvent DayNightSwitchEvent;
-
+    [System.NonSerialized]public DayNightEnum currentDayNight;
     private Camera cam;
+
+    public delegate void SwitchDayNightDelegate();
+    public event SwitchDayNightDelegate SwitchDayNightEvent;
+
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-
-        currentDayNight = DayNightEnum.day;
         cam = Camera.main;
+        Instance = this;
+
+        SwitchToSpecificDayNight(DayNightEnum.day);
     }
 
     public DayNightEnum SwitchDayNight()
@@ -41,7 +34,7 @@ public class DayNightSwitcher : MonoBehaviour
             currentDayNight = DayNightEnum.day;
         }
 
-        DayNightSwitchEvent?.Invoke();
+        SwitchDayNightEvent?.Invoke();
 
         return currentDayNight;
     }

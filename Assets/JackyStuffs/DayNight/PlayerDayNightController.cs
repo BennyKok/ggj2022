@@ -15,7 +15,6 @@ public class PlayerDayNightController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        DayNightSwitcher.Instance.SwitchToSpecificDayNight(DayNightSwitcher.DayNightEnum.day);
     }
 
     void Update()
