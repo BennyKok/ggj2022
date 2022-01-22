@@ -65,4 +65,6 @@ public class PlayerDayNightController : MonoBehaviour
             return;
         }
     }
+
+    
 }
