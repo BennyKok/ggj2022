@@ -54,7 +54,7 @@ MonoBehaviour:
   speedY: 0
   box: {fileID: 0}
   dead: 0
-  Light: 1
+  Light: 0
   alert: 0
 --- !u!65 &5960220171269568742
 BoxCollider:
