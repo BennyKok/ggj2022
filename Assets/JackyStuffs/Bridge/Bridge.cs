@@ -154,8 +154,11 @@ public class Bridge : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        lineAnimationCancelSource.Cancel();
-        lineAnimationCancelSource.Dispose();
-        lineAnimationCancelSource = null;
+        if (lineAnimationCancelSource != null)
+        {
+            lineAnimationCancelSource.Cancel();
+            lineAnimationCancelSource.Dispose();
+            lineAnimationCancelSource = null;
+        }
     }
 }
