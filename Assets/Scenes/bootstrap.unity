@@ -312,7 +312,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 16.85
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -815,14 +815,14 @@ MonoBehaviour:
   m_Follow: {fileID: 309480607}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 5
+    OrthographicSize: 16.85
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5245399, y: 1}
+    m_SensorSize: {x: 1.4668547, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -853,9 +853,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1882867355139324784, guid: 413f264d375922e43997efae88003554, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3866532329652496991, guid: 413f264d375922e43997efae88003554, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606667274333597881, guid: 413f264d375922e43997efae88003554, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5932055041693771352, guid: 413f264d375922e43997efae88003554, type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932055041693771352, guid: 413f264d375922e43997efae88003554, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5932055041693771352, guid: 413f264d375922e43997efae88003554, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5932055041693771353, guid: 413f264d375922e43997efae88003554, type: 3}
       propertyPath: m_RootOrder
@@ -909,6 +929,10 @@ PrefabInstance:
       propertyPath: m_UIInputModule
       value: 
       objectReference: {fileID: 615810580}
+    - target: {fileID: 8071161390014525300, guid: 413f264d375922e43997efae88003554, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413f264d375922e43997efae88003554, type: 3}
 --- !u!95 &5932055041996925639 stripped
