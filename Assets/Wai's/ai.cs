@@ -16,9 +16,13 @@ public class ai : MonoBehaviour
     {
         get => gameObject;
     }
+
     [SerializeField] int speedX = 0, speedY = 0;
     [SerializeField] BoxCollider box;
+
     public bool dead = false, Light = true, alert = false;
+
+    // public static ai Instance;
     int directionX, directionY, tmpDirectX;
     float changeDirectionTime = 0, distance=10;
     GameObject controlledplayer;
@@ -55,7 +59,7 @@ public class ai : MonoBehaviour
         {
             if (!Light)
             {
-                box.isTrigger = true;   
+                box.isTrigger = true;
                 if (playerTransform.transform.position.y < route[0].transform.position.y)
                 {
                     directionY = 1;
@@ -102,15 +106,20 @@ public class ai : MonoBehaviour
             directionY * Time.fixedDeltaTime * speedY * 9.81f);
     }
 
-    void isdead()
+    public void isdead()
     {
         dead = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
             CoreRef.Instance.playerEntity.OnDamage(1);
+
+        if (other.CompareTag("CollectBox"))
+        {
+            isdead();
+        }
     }
 
     void DayNightSwitch()
