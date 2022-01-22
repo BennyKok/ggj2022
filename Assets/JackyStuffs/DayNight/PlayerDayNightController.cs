@@ -46,7 +46,9 @@ public class PlayerDayNightController : MonoBehaviour
 
     private async void WaitCooldown(float seconds)
     {
+        orbSpriteRenderer.color = new Color32(255, 255, 255, 50);
         await Task.Delay((int)(seconds * 1000));
+        orbSpriteRenderer.color = new Color32(255, 255, 255, 255);
         isCooldowning = false;
     }
 
