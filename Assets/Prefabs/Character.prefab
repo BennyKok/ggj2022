@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5884389613044754556}
   - component: {fileID: 7902340229095021993}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: orb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2830510603194310750}
   - component: {fileID: 5955163148103682113}
   - component: {fileID: 4216175382004532734}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,9 +199,11 @@ GameObject:
   - component: {fileID: 5932055041693771366}
   - component: {fileID: 5932055041693771364}
   - component: {fileID: 5932055041693771362}
-  m_Layer: 0
+  - component: {fileID: 3665465295466398604}
+  - component: {fileID: 2122590561803812406}
+  m_Layer: 8
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -305,7 +307,7 @@ MonoBehaviour:
   speed: 8
   stopRotateOnMove: 0
   rotateSpeed: 800
-  jumpForce: 5
+  jumpForce: 13
   jumpDuration: 1.5
   stickToGroundForce: 0.5
   onJump:
@@ -377,6 +379,74 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &3665465295466398604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5932055041693771352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0ea2b63a5fdf249b0b591239451845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staffAnimator: {fileID: 3235916077026970895}
+  orbSpriteRenderer: {fileID: 7902340229095021993}
+  dayOrb: {fileID: -3301853592306188501, guid: ab0fd694d7c4d3145859e42cc33bfec3, type: 3}
+  nightOrb: {fileID: 3554076238403498374, guid: ab0fd694d7c4d3145859e42cc33bfec3, type: 3}
+  isCooldowning: 0
+--- !u!114 &2122590561803812406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5932055041693771352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20a72fef705f274dbc3a6975345ebfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  debugTimline: 0
+  skillSet: {fileID: 0}
+  stopTimelineThershold: 0.2
+  invincible: 0
+  hp: 3
+  baseAttack: 0
+  comboAddition:
+    coolDownTriggerDelay: 0.5
+    maxValue: 1
+    actionValue: 0.1
+    recoveryTime: 0.6
+    inverseFill: 0
+    fill: {fileID: 0}
+    secondaryFill: {fileID: 0}
+  hpText: {fileID: 0}
+  hpFill: {fileID: 0}
+  imageFill: {fileID: 0}
+  imageColor: {r: 0, g: 0, b: 0, a: 0}
+  imageSecondaryFill: {fileID: 0}
+  imageSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
+  displayHpBar: 0
+  clampHealth: 1
+  hpBarDisplayOffset: {x: 0, y: 0, z: 0}
+  damageDisplay: 0
+  damageDisplayOffset: {x: 0, y: 0, z: 0}
+  dontDestory: 0
+  destroyDelay: 0
+  destoryTarget: {fileID: 0}
+  onDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onAddHealthEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onDestroyEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  targetPoint: {fileID: 0}
 --- !u!1 &8071161390014525300
 GameObject:
   m_ObjectHideFlags: 0

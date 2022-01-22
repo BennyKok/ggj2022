@@ -10,7 +10,13 @@ public class ai : MonoBehaviour
     [SerializeField] Rigidbody rig;
     [SerializeField] Animator an;
     [SerializeField] GameObject[] route;
-    [SerializeField] GameObject playerTransform;
+
+    [SerializeField]
+    GameObject playerTransform
+    {
+        get => gameObject;
+    }
+
     [SerializeField] int speedX = 0, speedY = 0;
     [SerializeField] BoxCollider box;
     public bool dead = false, Light = true, alert = false;
@@ -23,7 +29,6 @@ public class ai : MonoBehaviour
     {
         DayNightSwitcher.Instance.SwitchDayNightEvent += DayNightSwitch;
         directionX = 1;
-        playerTransform = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
