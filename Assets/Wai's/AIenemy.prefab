@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2974269436520312264}
   - component: {fileID: -834637417786772189}
   - component: {fileID: 2089052719015935799}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AIenemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,15 +47,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6067453418f53a4cbc8dad046244a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rig: {fileID: 0}
-  an: {fileID: 0}
-  route: []
-  playerTransform: {fileID: 0}
-  speedX: 0
-  speedY: 0
-  box: {fileID: 0}
+  rig: {fileID: 2974269436520312264}
+  an: {fileID: -834637417786772189}
+  route:
+  - {fileID: 0}
+  - {fileID: 0}
+  speedX: 100
+  speedY: 100
+  box: {fileID: 5960220171269568742}
   dead: 0
-  Light: 0
+  Light: 1
   alert: 0
 --- !u!65 &5960220171269568742
 BoxCollider:
@@ -81,7 +82,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
