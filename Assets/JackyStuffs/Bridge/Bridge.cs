@@ -48,11 +48,11 @@ public class Bridge : MonoBehaviour
     {
         if (DayNightSwitcher.Instance.currentDayNight == DayNightSwitcher.DayNightEnum.day)
         {
-            CreateBridge();
+            DestroyBridge();
         }
         else
         {
-            DestroyBridge();
+            CreateBridge();
         }
     }
 
