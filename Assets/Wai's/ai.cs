@@ -20,12 +20,16 @@ public class ai : MonoBehaviour
     [SerializeField] BoxCollider box;
     public bool dead = false, Light = true, alert = false;
     int directionX, directionY, tmpDirectX;
-    float changeDirectionTime = 0;
+    float changeDirectionTime = 0, distance=10;
+    GameObject controlledplayer;
+    RaycastHit hit;
+
 
     // Start is called before the first frame update
 
     void Start()
     {
+        controlledplayer = GameObject.FindWithTag("Player");
         DayNightSwitcher.Instance.SwitchDayNightEvent += DayNightSwitch;
         directionX = 1;
     }
@@ -33,6 +37,20 @@ public class ai : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (distance < Vector3.Distance(playerTransform.transform.position, controlledplayer.transform.position))
+        {
+            if (Physics.Raycast(playerTransform.transform.position, new Vector3(-1, 0, 0), out hit))
+            {
+                Debug.Log("1");
+                if (hit.collider.tag == "Player")
+                {
+                    alert = true;
+                    Debug.Log("2");
+                }
+            }
+        }
+        else
+            alert = false;
         if (!dead)
         {
             if (!Light)
