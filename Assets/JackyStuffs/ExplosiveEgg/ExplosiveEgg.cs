@@ -7,7 +7,7 @@ public class ExplosiveEgg : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private SpriteRenderer explosionEffectSpriteRenderer;
-
+    public float explodeSeconds;
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -26,7 +26,7 @@ public class ExplosiveEgg : MonoBehaviour
     {
         if (DayNightSwitcher.Instance.currentDayNight == DayNightSwitcher.DayNightEnum.day)
         {
-            WaitExplosion(1.5f);
+            WaitExplosion(explodeSeconds);
         }
     }
 

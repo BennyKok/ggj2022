@@ -16,7 +16,6 @@ public class ai : MonoBehaviour
     {
         get => gameObject;
     }
-
     [SerializeField] int speedX = 0, speedY = 0;
     [SerializeField] BoxCollider box;
     public bool dead = false, Light = true, alert = false;
@@ -38,6 +37,7 @@ public class ai : MonoBehaviour
         {
             if (!Light)
             {
+                box.isTrigger = true;   
                 if (playerTransform.transform.position.y < route[0].transform.position.y)
                 {
                     directionY = 1;
@@ -68,6 +68,7 @@ public class ai : MonoBehaviour
             }
             else
             {
+                box.isTrigger = false;
                 an.Play("box");
                 if (directionX != 0)
                     tmpDirectX = directionX;
@@ -88,8 +89,10 @@ public class ai : MonoBehaviour
         dead = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider other)
     {
+        if(other.CompareTag("Player"))
+            CoreRef.Instance.playerEntity.OnDamage(1);
     }
 
     void DayNightSwitch()
