@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class ai : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class ai : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(playerTransform.transform.position);
         if (!dead)
         {
             if (!Light)
