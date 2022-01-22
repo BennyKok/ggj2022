@@ -1,0 +1,20 @@
+{
+    "name": "BennyKok.ThridPersonController",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c7b8f72e6bb2d41418aae18e313119c0",
+        "GUID:c0f7ec6407949cb41b4f9b3d4ae3490e",
+        "GUID:4307f53044263cf4b835bd812fc161a4",
+        "GUID:11f037fcfadef8e468821bb92182ab2d",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
