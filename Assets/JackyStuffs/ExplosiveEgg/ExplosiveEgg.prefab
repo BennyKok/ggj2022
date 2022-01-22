@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057458768681874322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.459494, y: -21.11, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8938088072722629525}
@@ -129,8 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9bc057361804894a933933a18d78999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 3519324337367578749}
-  explosionEffectSpriteRenderer: {fileID: 8513572200613077792}
+  explodeSeconds: 3
 --- !u!1 &7711169100348129459
 GameObject:
   m_ObjectHideFlags: 0

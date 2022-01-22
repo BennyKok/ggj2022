@@ -328,7 +328,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 16.85
+  orthographic size: 10.61
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -826,14 +826,14 @@ MonoBehaviour:
   m_Follow: {fileID: 309480607}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 16.85
+    OrthographicSize: 10.61
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.8591349, y: 1}
+    m_SensorSize: {x: 1.0970404, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -937,6 +937,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1689309935455370983, guid: faa42acfc7812ff46921e4c6798351a9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 9.400024
+      objectReference: {fileID: 0}
     - target: {fileID: 7594497708784424714, guid: faa42acfc7812ff46921e4c6798351a9, type: 3}
       propertyPath: m_Name
       value: UI

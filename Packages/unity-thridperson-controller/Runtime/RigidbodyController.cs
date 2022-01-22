@@ -381,7 +381,7 @@ public class RigidbodyController : MonoBehaviour
                 horizontalVelDelta.y = 0;
                 newVelVelocityDelta = horizontalVelDelta;
 
-                if (!((toeHit || kneeHit)))
+                if (!(toeHit || kneeHit))
                 {
                     targetBody.AddForce(newVelVelocityDelta, ForceMode.VelocityChange);
                 }
