@@ -36,6 +36,11 @@ public class AggressiveOwlAI : OwlAI
             chasePlayerCancelSource.Dispose();
             chasePlayerCancelSource = null;
         }
+        if (warningSignHolder != null)
+        {
+            Destroy(warningSignHolder);
+            warningSignHolder = null;
+        }
         hasDetectPlayer = false;
 
         if (!isDay)
@@ -87,8 +92,11 @@ public class AggressiveOwlAI : OwlAI
                                     Destroy(warningSignHolder);
                                     warningSignHolder = null;
                                 }
-                                chasePlayerCancelSource = new CancellationTokenSource();
-                                ChasePlayer(chasePlayerCancelSource.Token);
+                                if (DayNightSwitcher.Instance.currentDayNight == DayNightSwitcher.DayNightEnum.night)
+                                {
+                                    chasePlayerCancelSource = new CancellationTokenSource();
+                                    ChasePlayer(chasePlayerCancelSource.Token);
+                                }
                             }
                         }
                     }
@@ -116,7 +124,22 @@ public class AggressiveOwlAI : OwlAI
             {
                 if (DayNightSwitcher.Instance.currentDayNight == DayNightSwitcher.DayNightEnum.night)
                     animator.Play("usual");
+
+                if (warningSignHolder != null)
+                {
+                    Destroy(warningSignHolder);
+                    warningSignHolder = null;
+                }
+
                 return;
+            }
+            if (player.transform.position.x > transform.position.x)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else
+            {
+                spriteRenderer.flipX = false;
             }
             Vector3 direction = (player.transform.position - transform.position).normalized;
             rb.velocity = direction * 6;
