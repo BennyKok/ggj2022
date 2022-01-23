@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 54624b073ae61c54cadfaf06153b50fd
+guid: bc801ebe89a668e4fa693c8b47b7782a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9145668152330279083
-    second: sun_and_moon_0
+      213: 1874642024953405410
+    second: stars_BG_0
   - first:
-      213: 3743225863098579805
-    second: sun_and_moon_1
+      213: 6400297581340417877
+    second: stars_BG_1
+  - first:
+      213: -2662323972604163063
+    second: stars_BG_2
+  - first:
+      213: -3433805923581536018
+    second: stars_BG_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -52,7 +58,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 700
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sun_and_moon_0
+      name: stars_BG_0
       rect:
         serializedVersion: 2
-        x: 73
-        y: 279
-        width: 1446
-        height: 1252
+        x: 1004
+        y: 970
+        width: 670
+        height: 676
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,20 +129,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55720c2754f041180800000000000000
-      internalID: -9145668152330279083
+      spriteID: 2efdd5a4df0140a10800000000000000
+      internalID: 1874642024953405410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sun_and_moon_1
+      name: stars_BG_1
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 94
-        width: 1797
-        height: 1717
+        x: 164
+        y: 953
+        width: 615
+        height: 649
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,8 +150,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5bbb0c071c92f330800000000000000
-      internalID: 3743225863098579805
+      spriteID: 55f56907dbc62d850800000000000000
+      internalID: 6400297581340417877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stars_BG_2
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 294
+        width: 501
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c0ce7d3768d0bd0800000000000000
+      internalID: -2662323972604163063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stars_BG_3
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 291
+        width: 497
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee85a41a4bba850d0800000000000000
+      internalID: -3433805923581536018
       vertices: []
       indices: 
       edges: []
