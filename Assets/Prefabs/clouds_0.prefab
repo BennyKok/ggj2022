@@ -116,7 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1243fd0464d2734e87a2e2a046f588b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clouds: []
-  stars: []
   time: 1
+  filp: {fileID: 5621536562757604045}
   Y: 0

@@ -5765,6 +5765,18 @@ MonoBehaviour:
       onFinished:
         m_PersistentCalls:
           m_Calls: []
+    - content:
+        contents:
+        - FKED UP
+      delay: 2
+      clip: {fileID: 0}
+      useClipDuration: 0
+      actor: {fileID: 0}
+      waitForAction: 0
+      chance: 1
+      onFinished:
+        m_PersistentCalls:
+          m_Calls: []
   triggerType: 2
   invokeOnce: 0
   startDelay: 0
@@ -5965,11 +5977,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 12892810647961281, guid: 2ccd0b45d15834387a64df6aa5ec1f64, type: 3}
   m_PrefabInstance: {fileID: 667784943}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &680799071 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8734058439523720888, guid: 7c98f5b654973fd4baa5ac36ae5240f7, type: 3}
-  m_PrefabInstance: {fileID: 8734058438860240359}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &695986485
 PrefabInstance:
@@ -11316,11 +11323,6 @@ Transform:
   m_Father: {fileID: 1222425105}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!1 &808754994 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8734058439668460245, guid: 7c98f5b654973fd4baa5ac36ae5240f7, type: 3}
-  m_PrefabInstance: {fileID: 8734058438860240359}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &816848229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11386,11 +11388,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2de4a96bbcbb864c8def58e0daafc6b, type: 3}
---- !u!1 &829687989 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8734058439647460690, guid: 7c98f5b654973fd4baa5ac36ae5240f7, type: 3}
-  m_PrefabInstance: {fileID: 8734058438860240359}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &896915783
 GameObject:
   m_ObjectHideFlags: 0
@@ -11424,11 +11421,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &899513772 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8734058439574620235, guid: 7c98f5b654973fd4baa5ac36ae5240f7, type: 3}
-  m_PrefabInstance: {fileID: 8734058438860240359}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &916968357
 Mesh:
   m_ObjectHideFlags: 0
@@ -18926,12 +18918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1243fd0464d2734e87a2e2a046f588b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clouds:
-  - {fileID: 808754994}
-  - {fileID: 680799071}
-  - {fileID: 829687989}
-  - {fileID: 899513772}
   time: 5
+  Y: 0
 --- !u!1 &2024674939
 GameObject:
   m_ObjectHideFlags: 0

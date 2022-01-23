@@ -6,25 +6,32 @@ using UnityEngine;
 public class CloudMovement : DayNightComponent
 {
     public float time = 1;
+    public Animator filp;
 
-    public float Y;
+    public float Y = 180;
     // public bool light;
 
     protected override void OnDayNightSwitch(bool isLight)
     {
-        // gameObject.SetActive(isLight);
-        if (isLight || !isLight)
+        if (isLight)
         {
-            Y += 180;
-            gameObject.transform.DORotate(new Vector3(0, Y, 0), 2f);
+            filp.ResetTrigger("toStar");
+            filp.SetTrigger("toCloud");
+        }
+        else
+        {
+            filp.ResetTrigger("toCloud");
+            filp.SetTrigger("toStar");
         }
 
+        if (isLight || !isLight) Y += 180;
         if (Y > 540) Y = 0;
     }
 
     void Update()
     {
         Move();
+        filp = gameObject.GetComponent<Animator>();
     }
 
     public void Move()
