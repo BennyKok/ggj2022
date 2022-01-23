@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace Blaze.Dialogue
 {
@@ -9,7 +11,7 @@ namespace Blaze.Dialogue
     {
         public enum DialogueTriggerType
         {
-            None, OnStart, OnTrigger, OnCollision
+            None, OnStart, OnTrigger, OnCollision, OnTriggerInput
         }
 
         public BlazeDialogueEvents targetEvents;
@@ -17,6 +19,8 @@ namespace Blaze.Dialogue
         public Dialogue dialogue;
 
         public DialogueTriggerType triggerType;
+
+        public string triggerInputKey;
 
         public bool invokeOnce;
         public float startDelay;
@@ -37,6 +41,8 @@ namespace Blaze.Dialogue
         private bool dialogueShowing;
 
         private bool dialogueStarted;
+
+        private GameObject targetInTrigger;
 
         public void StartDialogue()
         {
@@ -179,15 +185,32 @@ namespace Blaze.Dialogue
                 StartDialogue();
         }
 
+        private void Update()
+        {
+            if (targetInTrigger && triggerType == DialogueTriggerType.OnTriggerInput)
+            {
+                if (Input.GetKeyDown(triggerInputKey))
+                {
+                    StartDialogue();
+                }
+            }
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            if (triggerType == DialogueTriggerType.OnTrigger && MatchTag(other.gameObject))
+            var isTag = MatchTag(other.gameObject);
+            if (isTag && targetInTrigger == null) targetInTrigger = other.gameObject;
+            
+            if (triggerType == DialogueTriggerType.OnTrigger && isTag)
                 StartDialogue();
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (triggerType == DialogueTriggerType.OnTrigger && cancelDialogueOnExit && MatchTag(other.gameObject))
+            var isTag = MatchTag(other.gameObject);
+            if (targetInTrigger == other.gameObject) targetInTrigger = null;
+            
+            if (triggerType == DialogueTriggerType.OnTrigger && cancelDialogueOnExit && isTag)
                 StopDialogue();
         }
 

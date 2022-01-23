@@ -47,6 +47,11 @@ namespace Blaze.Dialogue.Editor
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("cancelDialogueOnExit"));
             }
 
+            if (serializedObject.FindProperty("triggerType").enumValueIndex == 4)
+            {
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("triggerInputKey"));
+            }
+
             EditorGUILayout.Space();
 
             EditorGUILayout.LabelField("Events", EditorStyles.boldLabel);
