@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6414458316834001843}
   - component: {fileID: 6414458316834001842}
+  - component: {fileID: 4817096824891006845}
   m_Layer: 0
   m_Name: clouds_0 (1)
   m_TagString: Untagged
@@ -83,6 +84,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4817096824891006845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6414458316834001840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88cbde6a32e7e824680a1110d8a7f565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ropePrefab: {fileID: 3507966835657672486, guid: 2498e3d3378528e40a2bda9dd15299fe, type: 3}
+  knotsPrefabs:
+  - {fileID: 2675661546859652048, guid: 27e67c476896cce478dcfef93cc90bb7, type: 3}
+  - {fileID: 4477445767782640888, guid: 1848562e5e78f63418bd2b6ba4348e29, type: 3}
+  - {fileID: 4383204039032082942, guid: d8bfe3119f01f3e4da8a8126960afead, type: 3}
 --- !u!1 &6414458317170467874
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6414458317403003604}
   - component: {fileID: 6414458317403003607}
+  - component: {fileID: 3176206692116178771}
   m_Layer: 0
   m_Name: clouds_2
   m_TagString: Untagged
@@ -223,6 +242,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3176206692116178771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6414458317403003605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88cbde6a32e7e824680a1110d8a7f565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ropePrefab: {fileID: 3507966835657672486, guid: 2498e3d3378528e40a2bda9dd15299fe, type: 3}
+  knotsPrefabs:
+  - {fileID: 2675661546859652048, guid: 27e67c476896cce478dcfef93cc90bb7, type: 3}
+  - {fileID: 4477445767782640888, guid: 1848562e5e78f63418bd2b6ba4348e29, type: 3}
+  - {fileID: 4383204039032082942, guid: d8bfe3119f01f3e4da8a8126960afead, type: 3}
 --- !u!1 &6414458317725931261
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6414458317725931260}
   - component: {fileID: 6414458317725931263}
+  - component: {fileID: 6901926425965758275}
   m_Layer: 0
   m_Name: clouds_3
   m_TagString: Untagged
@@ -306,6 +343,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6901926425965758275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6414458317725931261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88cbde6a32e7e824680a1110d8a7f565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ropePrefab: {fileID: 3507966835657672486, guid: 2498e3d3378528e40a2bda9dd15299fe, type: 3}
+  knotsPrefabs:
+  - {fileID: 2675661546859652048, guid: 27e67c476896cce478dcfef93cc90bb7, type: 3}
+  - {fileID: 4477445767782640888, guid: 1848562e5e78f63418bd2b6ba4348e29, type: 3}
+  - {fileID: 4383204039032082942, guid: d8bfe3119f01f3e4da8a8126960afead, type: 3}
 --- !u!1 &6414458317940612515
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6414458317940612514}
   - component: {fileID: 6414458317940612541}
+  - component: {fileID: 6150765365518550934}
   m_Layer: 0
   m_Name: clouds_1 (1)
   m_TagString: Untagged
@@ -389,6 +444,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6150765365518550934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6414458317940612515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88cbde6a32e7e824680a1110d8a7f565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ropePrefab: {fileID: 3507966835657672486, guid: 2498e3d3378528e40a2bda9dd15299fe, type: 3}
+  knotsPrefabs:
+  - {fileID: 2675661546859652048, guid: 27e67c476896cce478dcfef93cc90bb7, type: 3}
+  - {fileID: 4477445767782640888, guid: 1848562e5e78f63418bd2b6ba4348e29, type: 3}
+  - {fileID: 4383204039032082942, guid: d8bfe3119f01f3e4da8a8126960afead, type: 3}
 --- !u!1 &6414458318047029046
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6414458318047029041}
   - component: {fileID: 6414458318047029040}
+  - component: {fileID: 2521828368615334063}
   m_Layer: 0
   m_Name: clouds_1
   m_TagString: Untagged
@@ -472,6 +545,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2521828368615334063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6414458318047029046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88cbde6a32e7e824680a1110d8a7f565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ropePrefab: {fileID: 3507966835657672486, guid: 2498e3d3378528e40a2bda9dd15299fe, type: 3}
+  knotsPrefabs:
+  - {fileID: 2675661546859652048, guid: 27e67c476896cce478dcfef93cc90bb7, type: 3}
+  - {fileID: 4477445767782640888, guid: 1848562e5e78f63418bd2b6ba4348e29, type: 3}
+  - {fileID: 4383204039032082942, guid: d8bfe3119f01f3e4da8a8126960afead, type: 3}
 --- !u!1 &6414458318181100290
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6414458318181100317}
   - component: {fileID: 6414458318181100316}
+  - component: {fileID: 4067509229623365862}
   m_Layer: 0
   m_Name: clouds_0
   m_TagString: Untagged
@@ -555,3 +646,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4067509229623365862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6414458318181100290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88cbde6a32e7e824680a1110d8a7f565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ropePrefab: {fileID: 3507966835657672486, guid: 2498e3d3378528e40a2bda9dd15299fe, type: 3}
+  knotsPrefabs:
+  - {fileID: 2675661546859652048, guid: 27e67c476896cce478dcfef93cc90bb7, type: 3}
+  - {fileID: 4477445767782640888, guid: 1848562e5e78f63418bd2b6ba4348e29, type: 3}
+  - {fileID: 4383204039032082942, guid: d8bfe3119f01f3e4da8a8126960afead, type: 3}

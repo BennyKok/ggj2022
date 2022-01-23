@@ -20,8 +20,10 @@ public class PlayerDayNightController : MonoBehaviour
         Instance = this;
     }
 
+    [HideInInspector]public Vector3 topPosition;
     void Update()
     {
+        topPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 0));
         if (Input.GetKeyDown(KeyCode.E) && !isCooldowning)
         {
             isCooldowning = true;
