@@ -346,7 +346,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.14
+  m_Radius: 1.44
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -397,6 +397,9 @@ MonoBehaviour:
   dayOrb: {fileID: -3301853592306188501, guid: ab0fd694d7c4d3145859e42cc33bfec3, type: 3}
   nightOrb: {fileID: 3554076238403498374, guid: ab0fd694d7c4d3145859e42cc33bfec3, type: 3}
   isCooldowning: 0
+  onSwitch:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2122590561803812406
 MonoBehaviour:
   m_ObjectHideFlags: 0
