@@ -12,7 +12,7 @@ public class DayNightSwitcher : MonoBehaviour
     [System.NonSerialized]public DayNightEnum currentDayNight;
     private Camera cam;
 
-    public delegate void SwitchDayNightDelegate();
+    public delegate void SwitchDayNightDelegate(bool isLight);
     public event SwitchDayNightDelegate SwitchDayNightEvent;
 
     private void Awake()
@@ -36,7 +36,7 @@ public class DayNightSwitcher : MonoBehaviour
             currentDayNight = DayNightEnum.day;
         }
 
-        SwitchDayNightEvent?.Invoke();
+        SwitchDayNightEvent?.Invoke(currentDayNight == DayNightEnum.day);
 
         return currentDayNight;
     }

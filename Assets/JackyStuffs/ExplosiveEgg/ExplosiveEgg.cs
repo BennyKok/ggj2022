@@ -22,12 +22,10 @@ public class ExplosiveEgg : MonoBehaviour
         DayNightSwitcher.Instance.SwitchDayNightEvent -= OnSwitch;
     }
 
-    private void OnSwitch()
+    private void OnSwitch(bool isLight)
     {
-        if (DayNightSwitcher.Instance.currentDayNight == DayNightSwitcher.DayNightEnum.day)
-        {
+        if (isLight)
             WaitExplosion(explodeSeconds);
-        }
     }
 
     private async void WaitExplosion(float seconds)

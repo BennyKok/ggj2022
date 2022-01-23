@@ -44,9 +44,9 @@ public class Bridge : MonoBehaviour
         }
     }
 
-    private void OnSwitch()
+    private void OnSwitch(bool isLight)
     {
-        if (DayNightSwitcher.Instance.currentDayNight == DayNightSwitcher.DayNightEnum.day)
+        if (isLight)
         {
             DestroyBridge();
         }

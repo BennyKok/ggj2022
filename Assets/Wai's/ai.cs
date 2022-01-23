@@ -113,12 +113,9 @@ public class ai : MonoBehaviour
         }
     }
 
-    void DayNightSwitch()
+    void DayNightSwitch(bool isLight)
     {
-        if (DayNightSwitcher.Instance.currentDayNight == DayNightSwitcher.DayNightEnum.day)
-            Light = true;
-        else
-            Light = false;
+        Light = isLight;
     }
 
     private void OnDestroy()

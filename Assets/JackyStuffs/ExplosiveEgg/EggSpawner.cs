@@ -24,11 +24,11 @@ public class EggSpawner : MonoBehaviour
         DayNightSwitcher.Instance.SwitchDayNightEvent -= OnSwitch;
     }
 
-    private void OnSwitch()
+    private void OnSwitch(bool isLight)
     {
         StopAllCoroutines();
 
-        if (DayNightSwitcher.Instance.currentDayNight == DayNightSwitcher.DayNightEnum.night)
+        if (!isLight)
         {
             foreach (GameObject g in eggs)
             {

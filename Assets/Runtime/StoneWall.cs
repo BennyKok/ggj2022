@@ -7,18 +7,16 @@ public class StoneWall : MonoBehaviour
 {
     private void Start()
     {
-        DayNightSwitcher.Instance.SwitchDayNightEvent += isShow;
+        DayNightSwitcher.Instance.SwitchDayNightEvent += IsShow;
     }
 
-    void isShow()
+    void IsShow(bool isLight)
     {
-        if (DayNightSwitcher.Instance.currentDayNight == DayNightSwitcher.DayNightEnum.day)
-            gameObject.SetActive(true);
-        else gameObject.SetActive(false);
+        gameObject.SetActive(!isLight);
     }
 
     private void OnDestroy()
     {
-        DayNightSwitcher.Instance.SwitchDayNightEvent -= isShow;
+        DayNightSwitcher.Instance.SwitchDayNightEvent -= IsShow;
     }
 }
