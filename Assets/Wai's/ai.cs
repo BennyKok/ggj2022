@@ -62,25 +62,21 @@ public class ai : MonoBehaviour
                 box.isTrigger = true;
                 if (alert)
                 {
+                    directionX = controlledplayer.transform.position.x < playerTransform.transform.position.x ? -1 : 1;
                     playerTransform.transform.position = Vector3.MoveTowards(playerTransform.transform.position, controlledplayer.transform.position, 2 * Time.deltaTime);
                     an.Play("alert");
+                    playerTransform.transform.localScale = new Vector3(-directionX, 1, 1);
                 }
                 else {
                     heightconditiion();
-                        directionY = 0;
                         if (directionX == 0)
                             directionX = tmpDirectX;
                         an.Play("patrol");
                         if (playerTransform.transform.position.x < route[0].transform.position.x)
-                        {
                             directionX = 1;
-                            playerTransform.transform.localScale = new Vector3(-directionX, 1, 1);
-                        }
                         else if(playerTransform.transform.position.x > route[1].transform.position.x)
-                    {
-                        directionX = -1;
-                        playerTransform.transform.localScale = new Vector3(-directionX, 1, 1);
-                    }
+                            directionX = -1;
+                    playerTransform.transform.localScale = new Vector3(-directionX, 1, 1);
                 }
             }
             else
@@ -131,9 +127,9 @@ public class ai : MonoBehaviour
     }
     void heightconditiion()
     {
-            if (playerTransform.transform.position.y < route[0].transform.position.y - 3)
+            if (playerTransform.transform.position.y < route[0].transform.position.y - 1)
                 directionY = 1;
-            else if (playerTransform.transform.position.y > route[0].transform.position.y + 3)// moved up at alert
+            else if (playerTransform.transform.position.y > route[0].transform.position.y + 1)// moved up at alert
                 directionY = -1;
             else
                 directionY = 0;
