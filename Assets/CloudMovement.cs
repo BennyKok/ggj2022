@@ -5,27 +5,34 @@ using UnityEngine;
 
 public class CloudMovement : DayNightComponent
 {
-    public List<GameObject> clouds;
     public float time = 1;
+
+    public float Y;
+    // public bool light;
 
     protected override void OnDayNightSwitch(bool isLight)
     {
-        gameObject.SetActive(isLight);
+        // gameObject.SetActive(isLight);
+        if (isLight || !isLight)
+        {
+            Y += 180;
+            gameObject.transform.DORotate(new Vector3(0, Y, 0), 2f);
+        }
+
+        if (Y > 540) Y = 0;
     }
 
     void Update()
     {
-        Cloud();
+        Move();
     }
-    
-    public void Cloud()
+
+    public void Move()
     {
-        foreach (var cloud in clouds)
-        {
-            cloud.transform.DOKill();
-            var c = cloud.transform.position;
-            double a = (Mathf.Sin(Time.time * time) + c.y);
-            cloud.transform.DOMoveY((float) a, 1f);
-        }
+        gameObject.transform.DOKill();
+        var c = gameObject.transform.position;
+        double a = (Mathf.Sin(Time.time * time) + c.y);
+        gameObject.transform.DOMoveY((float) a, 1f);
+        gameObject.transform.DORotate(new Vector3(0, Y, 0), 2f);
     }
 }
