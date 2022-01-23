@@ -4,32 +4,22 @@ using UnityEngine;
 using System;
 using System.Threading.Tasks;
 using System.Threading;
-using DG.Tweening;
-using Screen = UnityEngine.Device.Screen;
 
 public class DayNightSwitcher : MonoBehaviour
 {
     public static DayNightSwitcher Instance;
-    public GameObject moon;
-    public GameObject sun;
-
-    public enum DayNightEnum
-    {
-        day,
-        night
-    };
-
-    [System.NonSerialized] public DayNightEnum currentDayNight;
+    public enum DayNightEnum { day, night };
+    [System.NonSerialized]public DayNightEnum currentDayNight;
     private Camera cam;
 
-    public delegate void SwitchDayNightDelegate(bool isLight);
-
+    public delegate void SwitchDayNightDelegate(bool isDay);
     public event SwitchDayNightDelegate SwitchDayNightEvent;
 
     private void Awake()
     {
         cam = Camera.main;
         Instance = this;
+
         SwitchToSpecificDayNight(DayNightEnum.day);
     }
 
@@ -39,13 +29,11 @@ public class DayNightSwitcher : MonoBehaviour
         {
             ChangeSkyGradient(new Color32(20, 17, 51, 255));
             currentDayNight = DayNightEnum.night;
-            SunAndMoon(-100, 60);
         }
         else
         {
             ChangeSkyGradient(new Color32(130, 160, 210, 255));
             currentDayNight = DayNightEnum.day;
-            SunAndMoon(60, -100);
         }
 
         SwitchDayNightEvent?.Invoke(currentDayNight == DayNightEnum.day);
@@ -63,12 +51,10 @@ public class DayNightSwitcher : MonoBehaviour
         {
             currentDayNight = DayNightEnum.day;
         }
-
         SwitchDayNight();
     }
 
     private CancellationTokenSource skyGradientCancelSource = null;
-
     public void ChangeSkyGradient(Color32 color)
     {
         if (skyGradientCancelSource != null)
@@ -77,25 +63,16 @@ public class DayNightSwitcher : MonoBehaviour
             skyGradientCancelSource.Dispose();
             skyGradientCancelSource = null;
         }
-
         skyGradientCancelSource = new CancellationTokenSource();
         SkyGradient(color, skyGradientCancelSource.Token);
     }
 
-    public void SunAndMoon(int a, int b)
-    {
-        sun.transform.DOKill();
-        sun.transform.DOMoveY(Screen.height - a, 2f);
-        moon.transform.DOKill();
-        moon.transform.DOMoveY(Screen.height - b, 2f);
-    }
-
     private async void SkyGradient(Color32 color, CancellationToken token)
     {
-        byte r = (byte) (cam.backgroundColor.r * 255);
-        byte g = (byte) (cam.backgroundColor.g * 255);
-        byte b = (byte) (cam.backgroundColor.b * 255);
-        byte a = (byte) (cam.backgroundColor.a * 255);
+        byte r = (byte)(cam.backgroundColor.r * 255);
+        byte g = (byte)(cam.backgroundColor.g * 255);
+        byte b = (byte)(cam.backgroundColor.b * 255);
+        byte a = (byte)(cam.backgroundColor.a * 255);
         while (true)
         {
             if (token.IsCancellationRequested)
