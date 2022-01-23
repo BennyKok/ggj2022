@@ -3,20 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoneWall : MonoBehaviour
+public class StoneWall : DayNightComponent
 {
-    private void Start()
-    {
-        DayNightSwitcher.Instance.SwitchDayNightEvent += IsShow;
-    }
-
-    void IsShow(bool isLight)
+    protected override void OnDayNightSwitch(bool isLight)
     {
         gameObject.SetActive(!isLight);
     }
 
-    private void OnDestroy()
+    protected override void Start()
     {
-        DayNightSwitcher.Instance.SwitchDayNightEvent -= IsShow;
+        // your own start method
+        base.Start();
+    }
+
+    protected override void OnDestroy()
+    {
+        // you own destroy method
+        base.OnDestroy();
     }
 }
