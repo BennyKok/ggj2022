@@ -8,11 +8,12 @@ public class Bridge : MonoBehaviour
 {
     public GameObject bridgeCollider;
     public GameObject bridgeStar;
-    [HideInInspector]public List<Vector3> pointPosition;
-    [HideInInspector]public List<GameObject> bridges;
+    [HideInInspector] public List<Vector3> pointPosition;
+    [HideInInspector] public List<GameObject> bridges;
     [HideInInspector] public List<GameObject> stars;
 
     private LineRenderer lineRenderer;
+
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -20,7 +21,7 @@ public class Bridge : MonoBehaviour
 
         pointPosition = new List<Vector3>();
 
-        for(int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
             pointPosition.Add(transform.GetChild(i).position);
         }
@@ -38,7 +39,7 @@ public class Bridge : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        for(int i = 0; i < transform.childCount - 1; i++)
+        for (int i = 0; i < transform.childCount - 1; i++)
         {
             Gizmos.DrawLine(transform.GetChild(i).position, transform.GetChild(i + 1).position);
         }
@@ -57,6 +58,7 @@ public class Bridge : MonoBehaviour
     }
 
     GameObject bridgeHolder = null;
+
     private void CreateBridge()
     {
         DestroyBridge();
@@ -80,6 +82,7 @@ public class Bridge : MonoBehaviour
                 stars.Add(frontStar);
                 frontStar.transform.SetParent(bridgeHolder.transform);
             }
+
             GameObject endStar = Instantiate(bridgeStar, pointPosition[i + 1], Quaternion.identity);
             stars.Add(endStar);
             endStar.transform.SetParent(bridgeHolder.transform);
@@ -102,10 +105,12 @@ public class Bridge : MonoBehaviour
             lineAnimationCancelSource.Dispose();
             lineAnimationCancelSource = null;
         }
+
         lineRenderer.positionCount = 0;
     }
 
     private CancellationTokenSource lineAnimationCancelSource = null;
+
     private async void UpdateLineWidth(int pointCount, CancellationToken token)
     {
         if (pointCount < 2) return;
@@ -136,11 +141,13 @@ public class Bridge : MonoBehaviour
             while (true)
             {
                 lineRenderer.startWidth = Mathf.Sin(Time.timeSinceLevelLoad) * 0.09f;
-                lineRenderer.endWidth = Mathf.Sin(Time.timeSinceLevelLoad) * 0.09f;
-                for(int i = 0; i < stars.Count; i++)
+                lineRenderer.endWidth = Mathf.Sin(Time.timeSinceLevelLoad) * 0.18f;
+                for (int i = 0; i < stars.Count; i++)
                 {
-                    stars[i].transform.position += new Vector3(0, Mathf.Sin(Time.timeSinceLevelLoad + i * 2) * 0.01f, 0);
+                    stars[i].transform.position +=
+                        new Vector3(0, Mathf.Sin(Time.timeSinceLevelLoad + i * 2) * 0.01f, 0);
                 }
+
                 await Task.Delay(10, token);
             }
         }

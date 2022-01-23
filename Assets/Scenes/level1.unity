@@ -11184,7 +11184,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh121062
+  m_Name: pb_Mesh45238
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11895,7 +11895,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
-  orthographic: 1
+  orthographic: 0
   orthographic size: 9.4
   m_Depth: -1
   m_CullingMask:
@@ -11920,7 +11920,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211509540}
   m_LocalRotation: {x: 0, y: -0.9999996, z: 0, w: 0.00091641856}
-  m_LocalPosition: {x: 6.6083293, y: -0.12000048, z: 9.999983}
+  m_LocalPosition: {x: 9.028023, y: -0.09728493, z: 38.802216}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -17811,7 +17811,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh121142
+  m_Name: pb_Mesh45318
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17975,7 +17975,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh121030
+  m_Name: pb_Mesh45206
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18366,7 +18366,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh121130
+  m_Name: pb_Mesh45306
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18629,7 +18629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6414458317170467874, guid: e264c48117d18fc40b113dd828cdf4a8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6414458317170467901, guid: e264c48117d18fc40b113dd828cdf4a8, type: 3}
       propertyPath: m_RootOrder
@@ -18817,6 +18817,10 @@ PrefabInstance:
     - target: {fileID: 8734058440623309721, guid: 7c98f5b654973fd4baa5ac36ae5240f7, type: 3}
       propertyPath: m_Name
       value: Clouds
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734058440623309721, guid: 7c98f5b654973fd4baa5ac36ae5240f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c98f5b654973fd4baa5ac36ae5240f7, type: 3}
