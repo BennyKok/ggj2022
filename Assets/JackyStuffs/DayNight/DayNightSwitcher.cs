@@ -39,13 +39,13 @@ public class DayNightSwitcher : MonoBehaviour
         {
             ChangeSkyGradient(new Color32(20, 17, 51, 255));
             currentDayNight = DayNightEnum.night;
-            SunAndMoon(-100, 60);
+            SunAndMoon(-200, 100);
         }
         else
         {
             ChangeSkyGradient(new Color32(130, 160, 210, 255));
             currentDayNight = DayNightEnum.day;
-            SunAndMoon(60, -100);
+            SunAndMoon(100, -200);
         }
 
         SwitchDayNightEvent?.Invoke(currentDayNight == DayNightEnum.day);
