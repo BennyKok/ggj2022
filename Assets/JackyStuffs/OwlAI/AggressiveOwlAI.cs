@@ -41,6 +41,7 @@ public class AggressiveOwlAI : OwlAI
             Destroy(warningSignHolder);
             warningSignHolder = null;
         }
+        rb.isKinematic = false;
         hasDetectPlayer = false;
 
         if (!isDay)
@@ -80,6 +81,7 @@ public class AggressiveOwlAI : OwlAI
                                 CancelAllRoutes();
                                 if (warningSignHolder == null)
                                 {
+                                    rb.isKinematic = true;
                                     warningSignHolder = Instantiate(warningPrefab, transform.position + Vector3.up * 3, Quaternion.identity, transform);
                                     warningSignHolder.SetActive(false);
                                     await Task.Delay(250, token);
@@ -103,6 +105,7 @@ public class AggressiveOwlAI : OwlAI
                 }
                 if (token.IsCancellationRequested)
                 {
+                    rb.isKinematic = false;
                     return;
                 }
                 await Task.Yield();
@@ -110,6 +113,7 @@ public class AggressiveOwlAI : OwlAI
         }
         catch (System.OperationCanceledException) when (token.IsCancellationRequested)
         {
+            rb.isKinematic = false;
             return;
         }
     }
@@ -118,6 +122,7 @@ public class AggressiveOwlAI : OwlAI
     private async void ChasePlayer(CancellationToken token)
     {
         animator.Play("angry");
+        rb.isKinematic = false;
         while (true)
         {
             if (token.IsCancellationRequested)
