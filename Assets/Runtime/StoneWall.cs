@@ -7,7 +7,7 @@ public class StoneWall : DayNightComponent
 {
     protected override void OnDayNightSwitch(bool isLight)
     {
-        gameObject.SetActive(!isLight);
+        gameObject.SetActive(isLight);
     }
 
     protected override void Start()
