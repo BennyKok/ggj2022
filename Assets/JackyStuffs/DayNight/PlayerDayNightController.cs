@@ -24,7 +24,7 @@ public class PlayerDayNightController : MonoBehaviour
     void Update()
     {
         topPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 0));
-        if (Input.GetKeyDown(KeyCode.E) && !isCooldowning)
+        if ((Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.E) ) && !isCooldowning)
         {
             isCooldowning = true;
             DayNightSwitcher.DayNightEnum dayNightEnum = DayNightSwitcher.Instance.SwitchDayNight();
