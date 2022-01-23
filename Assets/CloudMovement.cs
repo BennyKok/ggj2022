@@ -17,7 +17,7 @@ public class CloudMovement : DayNightComponent
     {
         Cloud();
     }
-    
+
     public void Cloud()
     {
         foreach (var cloud in clouds)
