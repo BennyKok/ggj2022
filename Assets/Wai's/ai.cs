@@ -40,8 +40,8 @@ public class ai : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (distance < Vector3.Distance(playerTransform.transform.position, controlledplayer.transform.position))
+    { 
+        /*if (distance < Vector3.Distance(playerTransform.transform.position, controlledplayer.transform.position))
         {
             if (Physics.Raycast(playerTransform.transform.position, new Vector3(-1, 0, 0), out hit))
             {
@@ -54,37 +54,32 @@ public class ai : MonoBehaviour
             }
         }
         else
-            alert = false;
+            alert = false;*/
         if (!dead)
         {
             if (!Light)
             {
                 box.isTrigger = true;
-                if (playerTransform.transform.position.y < route[0].transform.position.y)
+                if (alert)
                 {
-                    directionY = 1;
-                    an.Play("patrol");
+                    playerTransform.transform.position = Vector3.MoveTowards(playerTransform.transform.position, controlledplayer.transform.position, 2 * Time.deltaTime);
+                    an.Play("alert");
                 }
-                else
-                {
-                    directionY = 0;
-                    if (directionX == 0)
-                        directionX = tmpDirectX;
-                    if (alert)
-                    {
-                        an.Play("alert");
-                    }
-                    else
-                    {
+                else {
+                    heightconditiion();
+                        directionY = 0;
+                        if (directionX == 0)
+                            directionX = tmpDirectX;
                         an.Play("patrol");
-                        if ((playerTransform.transform.position.x < route[0].transform.position.x ||
-                             playerTransform.transform.position.x > route[1].transform.position.x) &&
-                            Time.time - changeDirectionTime > 1f)
+                        if (playerTransform.transform.position.x < route[0].transform.position.x)
                         {
-                            changeDirectionTime = Time.time;
-                            directionX = -directionX;
+                            directionX = 1;
                             playerTransform.transform.localScale = new Vector3(-directionX, 1, 1);
                         }
+                        else if(playerTransform.transform.position.x > route[1].transform.position.x)
+                    {
+                        directionX = -1;
+                        playerTransform.transform.localScale = new Vector3(-directionX, 1, 1);
                     }
                 }
             }
@@ -133,5 +128,14 @@ public class ai : MonoBehaviour
     private void OnDestroy()
     {
         DayNightSwitcher.Instance.SwitchDayNightEvent -= DayNightSwitch;
+    }
+    void heightconditiion()
+    {
+            if (playerTransform.transform.position.y < route[0].transform.position.y - 3)
+                directionY = 1;
+            else if (playerTransform.transform.position.y > route[0].transform.position.y + 3)// moved up at alert
+                directionY = -1;
+            else
+                directionY = 0;
     }
 }
