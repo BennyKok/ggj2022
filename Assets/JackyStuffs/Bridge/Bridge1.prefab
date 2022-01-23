@@ -77,9 +77,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bridgeCollider: {fileID: 6459957486015991663, guid: 9156024536d5b9746bd44e760f11100d, type: 3}
-  bridgeStar: {fileID: 1091119823298439196, guid: 99dc8855df03d5d42936e73be90242d5, type: 3}
+  bridgeStar: {fileID: 1121554540803607570, guid: 0ab669e785be55e469ad910aa97bb58b, type: 3}
   pointPosition: []
   bridges: []
+  stars: []
 --- !u!120 &659224512738989428
 LineRenderer:
   m_ObjectHideFlags: 0
