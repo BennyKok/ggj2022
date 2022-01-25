@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1661722035766295931}
   - component: {fileID: 4867810590342590553}
   - component: {fileID: 5675740922334243381}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BridgeCollider
-  m_TagString: Untagged
+  m_TagString: Bridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

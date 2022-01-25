@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 916656827865446409}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: point (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 7041066207362261374}
   - component: {fileID: 7041066207362261375}
   - component: {fileID: 659224512738989428}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bridge1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7041066208528307313}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: point
   m_TagString: Untagged
   m_Icon: {fileID: 0}

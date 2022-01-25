@@ -46,7 +46,7 @@ public class PlayerDayNightController : MonoBehaviour
             staffAnimCancelSource = new CancellationTokenSource();
             PerformStaffAnimation(staffAnimCancelSource.Token);
 
-            WaitCooldown(1.5f);
+            WaitCooldown(0.5f);
         }
     }
 

@@ -7,19 +7,24 @@ using System.Threading;
 public class OwlAI : DayNightComponent
 {
     public Transform route;
+    public float waitTimePreStop;
 
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
     protected Rigidbody rb;
 
+    private Collider collider;
     protected override void Start()
     {
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        collider = GetComponent<Collider>();
 
         transform.position = route.GetChild(0).position;
+        if (waitTimePreStop < 0.1f)
+            waitTimePreStop = 0.01f;
     }
 
     protected override void OnDestroy()
@@ -158,7 +163,7 @@ public class OwlAI : DayNightComponent
                 {
                     Vector3 direction = (route.GetChild(currentFlyingPoint).position - transform.position).normalized;
                     rb.velocity = direction * 6;
-                    await Task.Delay(100, token);
+                    await Task.Delay((int)(100), token);
                 } while (Vector3.Distance(route.GetChild(currentFlyingPoint).position, transform.position) > 2);
 
                 if (isBackward)
@@ -186,7 +191,7 @@ public class OwlAI : DayNightComponent
                     }
                 }
                 rb.isKinematic = true;
-                await Task.Delay(1000, token);
+                await Task.Delay((int)(1000 * waitTimePreStop), token);
                 rb.isKinematic = false;
             }
         }
@@ -195,6 +200,14 @@ public class OwlAI : DayNightComponent
             rb.isKinematic = false;
             rb.velocity = Vector3.zero;
             return;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bridge")
+        {
+            Physics.IgnoreCollision(collision.collider, collider);
         }
     }
 }
