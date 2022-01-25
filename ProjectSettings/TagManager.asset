@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - CollectBox
   - UI
+  - Bridge
   layers:
   - Default
   - TransparentFX
