@@ -19,31 +19,38 @@ public class DayNightSwitcher : MonoBehaviour
     };
 
     [System.NonSerialized] public DayNightEnum currentDayNight;
-    private SpriteRenderer paperBackground;
-
+    private GameObject dayNightRotator;
     public delegate void SwitchDayNightDelegate(bool isDay);
 
     public event SwitchDayNightDelegate SwitchDayNightEvent;
 
     private void Awake()
     {
-        paperBackground = GameObject.Find("PaperBackground").GetComponent<SpriteRenderer>();
+        dayNightRotator = GameObject.Find("DayNightRotator");
         Instance = this;
 
         SwitchToSpecificDayNight(DayNightEnum.day);
+        bottomRightPosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0));
+        bottomLeftPosition = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
+        middlePosition = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0));
+
     }
 
+    private Vector3 bottomRightPosition, bottomLeftPosition, middlePosition;
     public DayNightEnum SwitchDayNight()
     {
         if (currentDayNight == DayNightEnum.day)
         {
-            ChangeSkyGradient(new Color32(65, 80, 100, 255));
+
+            //ChangeSkyGradient(nightBackground, new Color32(255, 255, 255, 255));
+            RotateSky();
             currentDayNight = DayNightEnum.night;
             SunAndMoon(-200, 100);
         }
         else
         {
-            ChangeSkyGradient(new Color32(255, 255, 255, 255));
+            //ChangeSkyGradient(nightBackground, new Color32(255, 255, 255, 0));
+            RotateSky();
             currentDayNight = DayNightEnum.day;
             SunAndMoon(100, -200);
         }
@@ -69,7 +76,7 @@ public class DayNightSwitcher : MonoBehaviour
 
     private CancellationTokenSource skyGradientCancelSource = null;
 
-    public void ChangeSkyGradient(Color32 color)
+    public void ChangeSkyGradient(SpriteRenderer rend, Color32 color)
     {
         if (skyGradientCancelSource != null)
         {
@@ -79,7 +86,7 @@ public class DayNightSwitcher : MonoBehaviour
         }
 
         skyGradientCancelSource = new CancellationTokenSource();
-        SkyGradient(color, skyGradientCancelSource.Token);
+        SkyGradient(rend, color, skyGradientCancelSource.Token);
     }
 
     public void SunAndMoon(int a, int b)
@@ -90,12 +97,12 @@ public class DayNightSwitcher : MonoBehaviour
         moon.transform.DOMoveY(Screen.height - b, 2f);
     }
 
-    private async void SkyGradient(Color32 color, CancellationToken token)
+    private async void SkyGradient(SpriteRenderer rend, Color32 color, CancellationToken token)
     {
-        byte r = (byte) (paperBackground.color.r * 255);
-        byte g = (byte) (paperBackground.color.g * 255);
-        byte b = (byte) (paperBackground.color.b * 255);
-        byte a = (byte) (paperBackground.color.a * 255);
+        byte r = (byte) (rend.color.r * 255);
+        byte g = (byte) (rend.color.g * 255);
+        byte b = (byte) (rend.color.b * 255);
+        byte a = (byte) (rend.color.a * 255);
         while (true)
         {
             if (token.IsCancellationRequested)
@@ -142,8 +149,50 @@ public class DayNightSwitcher : MonoBehaviour
             if (r == color.r && g == color.g && b == color.b && a == color.a)
                 return;
 
-            paperBackground.color = new Color32(r, g, b, a);
+            rend.color = new Color32(r, g, b, a);
             await Task.Yield();
+        }
+    }
+
+    private void RotateSky()
+    {
+        if (rotateSkyCancelSource != null)
+        {
+            rotateSkyCancelSource.Cancel();
+            rotateSkyCancelSource.Dispose();
+            rotateSkyCancelSource = null;
+        }
+        rotateSkyCancelSource = new CancellationTokenSource();
+        RotateSkyAsync(rotateSkyCancelSource.Token);
+    }
+
+    private CancellationTokenSource rotateSkyCancelSource;
+    private async void RotateSkyAsync(CancellationToken token)
+    {
+        for(int i = 0; i < 36; i++)
+        {
+            if (token.IsCancellationRequested)
+            {
+                if (currentDayNight == DayNightEnum.day)
+                {
+                    dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+                else
+                {
+                    dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 180);
+                }
+                return;
+            }
+            dayNightRotator.transform.Rotate(Vector3.forward * 5);
+            await Task.Delay(10, token);
+        }
+        if (currentDayNight == DayNightEnum.day)
+        {
+            dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
     }
 }

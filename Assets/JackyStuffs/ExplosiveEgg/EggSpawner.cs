@@ -1,63 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
+using System.Threading;
 
-public class EggSpawner : MonoBehaviour
+public class EggSpawner : DayNightComponent
 {
     public GameObject explosiveEggPrefab;
+    public float seconds;
 
-    public float explodeSeconds, spawnSeconds;
-    public int eggLimited;
+    private CancellationTokenSource spawnEggCancelSource;
 
-    [SerializeField]private int eggSpawned = 0;
-
-    public List<GameObject> eggs;
-
-    private void Start()
+    private void Awake()
     {
-        eggs = new List<GameObject>();
-        DayNightSwitcher.Instance.SwitchDayNightEvent += OnSwitch;
+        if (seconds < 0.1f)
+            seconds = 0.1f;
     }
 
-    private void OnDestroy()
+    protected override void OnDayNightSwitch(bool isDay)
     {
-        DayNightSwitcher.Instance.SwitchDayNightEvent -= OnSwitch;
-    }
-
-    private void OnSwitch(bool isLight)
-    {
-        StopAllCoroutines();
-
-        if (!isLight)
+        if (spawnEggCancelSource != null)
         {
-            foreach (GameObject g in eggs)
-            {
-                if (g != null)
-                    Destroy(g);
-            }
-            eggs.Clear();
-            eggSpawned = 0;
+            spawnEggCancelSource.Cancel();
+            spawnEggCancelSource.Dispose();
+            spawnEggCancelSource = null;
+        }
 
-            StartCoroutine(SpawnExplosiveEgg());
+        if (!isDay)
+        {
+            spawnEggCancelSource = new CancellationTokenSource();
+            SpawnEggs(seconds, spawnEggCancelSource.Token);
         }
     }
 
-    private IEnumerator SpawnExplosiveEgg()
+    private async void SpawnEggs(float seconds, CancellationToken token)
     {
         while (true)
         {
-            if (eggSpawned < eggLimited)
+            if (token.IsCancellationRequested)
             {
-                GameObject temp = Instantiate(explosiveEggPrefab, transform.position, Quaternion.identity);
-                eggs.Add(temp);
-                temp.GetComponent<ExplosiveEgg>().explodeSeconds = explodeSeconds;
-                eggSpawned++;
+                return;
             }
-            else
-            {
-                yield return new WaitUntil(() => eggSpawned < eggLimited);
-            }
-            yield return new WaitForSeconds(spawnSeconds);
+            Instantiate(explosiveEggPrefab, transform.position, Quaternion.identity);
+            await Task.Delay((int)(1000 * seconds));
         }
     }
 }
