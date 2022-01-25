@@ -1,0 +1,414 @@
+fileFormatVersion: 2
+guid: a076a1b13bfbff54caaa91ac722a7b14
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 120118885455999758
+    second: paper_owls_0
+  - first:
+      213: 755492982299593193
+    second: paper_owls_1
+  - first:
+      213: -3185193450361021082
+    second: paper_owls_2
+  - first:
+      213: 8273978572917098770
+    second: paper_owls_3
+  - first:
+      213: -466475907347837440
+    second: paper_owls_4
+  - first:
+      213: -5135523522496857465
+    second: paper_owls_5
+  - first:
+      213: 4737752767143993078
+    second: paper_owls_6
+  - first:
+      213: -5376460077542917903
+    second: paper_owls_7
+  - first:
+      213: 3607122266606618092
+    second: paper_owls_8
+  - first:
+      213: 344527265900289902
+    second: paper_owls_9
+  - first:
+      213: -6666736371149800395
+    second: paper_owls_10
+  - first:
+      213: 1162297603757389546
+    second: paper_owls_11
+  - first:
+      213: 4990798119172963606
+    second: paper_owls_12
+  - first:
+      213: 4114918107741259524
+    second: paper_owls_13
+  - first:
+      213: -1427273587142958148
+    second: paper_owls_14
+  - first:
+      213: -3905988182967435454
+    second: paper_owls_15
+  - first:
+      213: 7744235714533592302
+    second: paper_owls_16
+  - first:
+      213: -54884900657866291
+    second: paper_owls_17
+  - first:
+      213: -4797092101491896670
+    second: paper_owls_18
+  - first:
+      213: 8320418276198136867
+    second: paper_owls_19
+  - first:
+      213: -8946213727304229999
+    second: paper_owls_20
+  - first:
+      213: 1086720545011979665
+    second: paper_owls_21
+  - first:
+      213: 2840315209898756786
+    second: paper_owls_22
+  - first:
+      213: -91041439593833931
+    second: paper_owls_23
+  - first:
+      213: 8441634646104764726
+    second: paper_owls_24
+  - first:
+      213: -8286541333040487393
+    second: paper_owls_25
+  - first:
+      213: -9097065614567591871
+    second: paper_owls_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 180
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: paper_owls_0
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 706
+        width: 497
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e03bb6a6d7fbaa100800000000000000
+      internalID: 120118885455999758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_owls_4
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 706
+        width: 502
+        height: 501
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e014e32aeb689f0800000000000000
+      internalID: -466475907347837440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_owls_7
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 706
+        width: 568
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f83cf09b0af265b0800000000000000
+      internalID: -5376460077542917903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_owls_9
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 701
+        width: 532
+        height: 485
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f5c6319b108c400800000000000000
+      internalID: 344527265900289902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_owls_18
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 92
+        width: 491
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae4eb7562e4d6db0800000000000000
+      internalID: -4797092101491896670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_owls_20
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 92
+        width: 490
+        height: 505
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19bde4b930aa8d380800000000000000
+      internalID: -8946213727304229999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_owls_22
+      rect:
+        serializedVersion: 2
+        x: 2077
+        y: 588
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba872082a3da6720800000000000000
+      internalID: 2840315209898756786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_owls_24
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 89
+        width: 525
+        height: 488
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63174b42cf5b62570800000000000000
+      internalID: 8441634646104764726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_owls_25
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 95
+        width: 565
+        height: 485
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f14a783cf8a400d80800000000000000
+      internalID: -8286541333040487393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

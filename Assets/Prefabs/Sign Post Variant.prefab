@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 19321653}
   - component: {fileID: 19321652}
   - component: {fileID: 19321651}
-  - component: {fileID: 19321655}
+  - component: {fileID: 4329645378575056649}
+  - component: {fileID: 1844340983000290372}
   m_Layer: 5
   m_Name: Dialog
   m_TagString: Untagged
@@ -120,7 +121,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &19321655
+--- !u!114 &4329645378575056649
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,9 +130,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 19321649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72a1294ad8e02c845b1b38c86b540851, type: 3}
+  m_Script: {fileID: 11500000, guid: bd3f7e8525e43c94c9641c8876907bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0.5
+--- !u!114 &1844340983000290372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19321649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a242af140d15478baf3ad5e3ed4ba045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: {x: 0, y: 0, z: 0}
 --- !u!1 &1477567367
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +424,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 144
   m_TargetDisplay: 0
 --- !u!114 &2024674943
 MonoBehaviour:
@@ -477,25 +492,25 @@ MonoBehaviour:
   onDialogueShow:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 19321649}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 4329645378575056649}
+        m_TargetAssemblyTypeName: ScaleTween, Assembly-CSharp
+        m_MethodName: ScaleTo
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
   onDialogueHide:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 19321649}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 4329645378575056649}
+        m_TargetAssemblyTypeName: ScaleTween, Assembly-CSharp
+        m_MethodName: ScaleTo
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
