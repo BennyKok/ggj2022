@@ -8,6 +8,7 @@ public class EggSpawner : DayNightComponent
 {
     public GameObject explosiveEggPrefab;
     public float seconds;
+    public float eggExplodeSeconds;
 
     private CancellationTokenSource spawnEggCancelSource;
 
@@ -41,7 +42,8 @@ public class EggSpawner : DayNightComponent
             {
                 return;
             }
-            Instantiate(explosiveEggPrefab, transform.position, Quaternion.identity);
+            GameObject temp = Instantiate(explosiveEggPrefab, transform.position, Quaternion.identity);
+            temp.GetComponent<ExplosiveEgg>().seconds = eggExplodeSeconds;
             await Task.Delay((int)(1000 * seconds));
         }
     }
