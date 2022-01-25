@@ -160,7 +160,7 @@ public class OwlAI : DayNightComponent
                 } while (Vector3.Distance(route.GetChild(currentFlyingPoint).position, transform.position) > 2);
                 currentFlyingPoint = (currentFlyingPoint + 1) % route.childCount;
                 rb.isKinematic = true;
-                await Task.Delay(2000, token);
+                await Task.Delay(1000, token);
                 rb.isKinematic = false;
             }
         }

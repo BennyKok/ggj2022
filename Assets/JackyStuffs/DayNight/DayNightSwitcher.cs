@@ -19,7 +19,7 @@ public class DayNightSwitcher : MonoBehaviour
     };
 
     [System.NonSerialized] public DayNightEnum currentDayNight;
-    private Camera cam;
+    private SpriteRenderer paperBackground;
 
     public delegate void SwitchDayNightDelegate(bool isDay);
 
@@ -27,7 +27,7 @@ public class DayNightSwitcher : MonoBehaviour
 
     private void Awake()
     {
-        cam = Camera.main;
+        paperBackground = GameObject.Find("PaperBackground").GetComponent<SpriteRenderer>();
         Instance = this;
 
         SwitchToSpecificDayNight(DayNightEnum.day);
@@ -37,13 +37,13 @@ public class DayNightSwitcher : MonoBehaviour
     {
         if (currentDayNight == DayNightEnum.day)
         {
-            ChangeSkyGradient(new Color32(20, 17, 51, 255));
+            ChangeSkyGradient(new Color32(65, 80, 100, 255));
             currentDayNight = DayNightEnum.night;
             SunAndMoon(-200, 100);
         }
         else
         {
-            ChangeSkyGradient(new Color32(130, 160, 210, 255));
+            ChangeSkyGradient(new Color32(255, 255, 255, 255));
             currentDayNight = DayNightEnum.day;
             SunAndMoon(100, -200);
         }
@@ -92,10 +92,10 @@ public class DayNightSwitcher : MonoBehaviour
 
     private async void SkyGradient(Color32 color, CancellationToken token)
     {
-        byte r = (byte) (cam.backgroundColor.r * 255);
-        byte g = (byte) (cam.backgroundColor.g * 255);
-        byte b = (byte) (cam.backgroundColor.b * 255);
-        byte a = (byte) (cam.backgroundColor.a * 255);
+        byte r = (byte) (paperBackground.color.r * 255);
+        byte g = (byte) (paperBackground.color.g * 255);
+        byte b = (byte) (paperBackground.color.b * 255);
+        byte a = (byte) (paperBackground.color.a * 255);
         while (true)
         {
             if (token.IsCancellationRequested)
@@ -142,7 +142,7 @@ public class DayNightSwitcher : MonoBehaviour
             if (r == color.r && g == color.g && b == color.b && a == color.a)
                 return;
 
-            cam.backgroundColor = new Color32(r, g, b, a);
+            paperBackground.color = new Color32(r, g, b, a);
             await Task.Yield();
         }
     }
