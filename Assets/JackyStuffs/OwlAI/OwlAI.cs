@@ -90,6 +90,7 @@ public class OwlAI : DayNightComponent
     {
         try
         {
+            isBackward = false;
             float closestPoint = Vector3.Distance(route.GetChild(0).position, transform.position);
             int point = 0;
             for (int i = 0; i < route.childCount; i++)
@@ -114,7 +115,7 @@ public class OwlAI : DayNightComponent
             while (Vector3.Distance(route.GetChild(point).position, transform.position) > 2)
             {
                 Vector3 direction = (route.GetChild(currentFlyingPoint).position - transform.position).normalized;
-                rb.velocity = direction * 6;
+                rb.velocity = direction * 10;
                 await Task.Delay(100, token);
             }
             FlyRoute();
@@ -126,6 +127,7 @@ public class OwlAI : DayNightComponent
         }
     }
 
+    private bool isBackward;
     private async void FlyToRoute(CancellationToken token)
     {
         try
@@ -158,7 +160,31 @@ public class OwlAI : DayNightComponent
                     rb.velocity = direction * 6;
                     await Task.Delay(100, token);
                 } while (Vector3.Distance(route.GetChild(currentFlyingPoint).position, transform.position) > 2);
-                currentFlyingPoint = (currentFlyingPoint + 1) % route.childCount;
+
+                if (isBackward)
+                {
+                    if (currentFlyingPoint - 1 < 0)
+                    {
+                        isBackward = false;
+                        currentFlyingPoint++;
+                    }
+                    else
+                    {
+                        currentFlyingPoint--;
+                    }
+                }
+                else
+                {
+                    if (currentFlyingPoint + 1 >= route.childCount)
+                    {
+                        isBackward = true;
+                        currentFlyingPoint--;
+                    }
+                    else
+                    {
+                        currentFlyingPoint++;
+                    }
+                }
                 rb.isKinematic = true;
                 await Task.Delay(1000, token);
                 rb.isKinematic = false;
