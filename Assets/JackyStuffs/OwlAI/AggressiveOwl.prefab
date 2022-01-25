@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7365335836476198853}
   - component: {fileID: 7365335836476198852}
   - component: {fileID: 7365335836476198861}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AggressiveOwl
   m_TagString: Untagged
   m_Icon: {fileID: 0}

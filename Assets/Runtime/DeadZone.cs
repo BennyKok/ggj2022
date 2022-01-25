@@ -13,7 +13,7 @@ public class DeadZone : MonoBehaviour
 
     void Start()
     {
-        respawn = Bootstrap.Instance.transform;
+        respawn = GameObject.Find("LevelInitializer").transform.GetChild(0).transform;
         player = GameObject.FindWithTag("Player");
     }
 

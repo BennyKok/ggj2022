@@ -101,7 +101,6 @@ public class OwlAI : DayNightComponent
                 }
             }
             currentFlyingPoint = point;
-            Vector3 direction = (route.GetChild(point).position - transform.position).normalized;
 
             if (route.GetChild(point).position.x > transform.position.x)
             {
@@ -114,6 +113,7 @@ public class OwlAI : DayNightComponent
 
             while (Vector3.Distance(route.GetChild(point).position, transform.position) > 2)
             {
+                Vector3 direction = (route.GetChild(currentFlyingPoint).position - transform.position).normalized;
                 rb.velocity = direction * 6;
                 await Task.Delay(100, token);
             }
@@ -130,6 +130,18 @@ public class OwlAI : DayNightComponent
     {
         try
         {
+            float closestPoint = Vector3.Distance(route.GetChild(0).position, transform.position);
+            int point = 0;
+            for (int i = 0; i < route.childCount; i++)
+            {
+                if (Vector3.Distance(route.GetChild(i).position, transform.position) < closestPoint)
+                {
+                    closestPoint = Vector3.Distance(route.GetChild(i).position, transform.position);
+                    point = i;
+                }
+            }
+            currentFlyingPoint = point;
+
             while (true)
             {
                 if (route.GetChild(currentFlyingPoint).position.x > transform.position.x)
