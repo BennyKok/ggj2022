@@ -30,7 +30,10 @@ public class DeadZone : MonoBehaviour
         // {
         // reload unity scene
         Debug.Log("hey");
-        SceneManager.LoadScene(gameObject.scene.name);
+        // SceneManager.LoadScene(gameObject.scene.name);
+        
+        DeathScreen.Instance.gameObject.SetActive(true);
+        DeathScreen.Instance.OK(gameObject);
         // }
     }
 }

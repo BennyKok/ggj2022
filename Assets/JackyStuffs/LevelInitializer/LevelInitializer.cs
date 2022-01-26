@@ -7,8 +7,11 @@ public class LevelInitializer : MonoBehaviour
 {
     public DayNightSwitcher.DayNightEnum initialDayNight;
 
-    private void Start()
+    private IEnumerator Start()
     {
+        yield return new WaitForEndOfFrame();
         DayNightSwitcher.Instance.SwitchToSpecificDayNight(initialDayNight);
     }
+    
+    
 }
