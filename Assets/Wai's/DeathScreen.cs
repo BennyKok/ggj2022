@@ -71,6 +71,9 @@ public class DeathScreen : Singleton<DeathScreen>
                     {
                         I.sprite = pic[2];
                         Count = 2;
+                        
+                        StopCoroutine("Restart");
+                        StartCoroutine("Restart");
                     }
                     else
                     {
@@ -80,14 +83,10 @@ public class DeathScreen : Singleton<DeathScreen>
                     break;
                 case 2:
                     //restart
-                    if (Input.GetKeyDown("g"))
+                    if (Input.GetKeyDown("j"))
                     {
-                        RestKey();
-                        SceneManager.LoadScene(from.scene.name);
-                    }
-                    else if (Input.GetKeyDown("j"))
-                    {
-                        Restart();
+                        StopCoroutine("Restart");
+                        StartCoroutine("RestartDelay");
                         Debug.Log("Happy game jam");
                     }
                     else
@@ -101,18 +100,30 @@ public class DeathScreen : Singleton<DeathScreen>
     }
 
 
-    // delay 2 seconds and reload scene
-    public void Restart()
-    {
-        transform.DOShakePosition(2f, 10f, 20, 90, false, true);
-        died = false;
-        Invoke("RestartScene", 2f);
-    }
+    // // delay 2 seconds and reload scene
+    // public void Restart()
+    // {
+    //     transform.DOShakePosition(2f, 10f, 20, 90, false, true);
+    //     Invoke("RestartScene", 2f);
+    // }
 
-    void RestartScene()
+    IEnumerator Restart()
     {
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(from.scene.name);
     }
+
+    IEnumerator RestartDelay()
+    {
+        transform.DOShakePosition(2f, 10f, 20, 90, false, false);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(from.scene.name);
+    }
+
+    // void RestartScene()
+    // {
+    //     SceneManager.LoadScene(from.scene.name);
+    // }
 
     public override void OnAwake()
     {
