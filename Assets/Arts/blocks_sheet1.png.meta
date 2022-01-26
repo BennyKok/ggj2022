@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 1e4f1e426d4286a4eb8eba9afd5e19ff
+guid: 87886b835f435734e9806d7fbe1e0410
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1805158079502305607
-    second: Flag_0
+      213: 2423940260995557343
+    second: blocks_sheet1_0
   - first:
-      213: -477789389410734736
-    second: Flag_1
+      213: -2336594599065063208
+    second: blocks_sheet1_1
+  - first:
+      213: 3345968301172595511
+    second: blocks_sheet1_2
+  - first:
+      213: 465574949092292609
+    second: blocks_sheet1_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -133,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flag_0
+      name: blocks_sheet1_0
       rect:
         serializedVersion: 2
-        x: 45
-        y: 25
-        width: 553
-        height: 944
+        x: 247
+        y: 1231
+        width: 856
+        height: 378
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 749492c85b53d0910800000000000000
-      internalID: 1805158079502305607
+      spriteID: fd7686523d093a120800000000000000
+      internalID: 2423940260995557343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flag_1
+      name: blocks_sheet1_1
       rect:
         serializedVersion: 2
-        x: 759
-        y: 28
-        width: 563
-        height: 941
+        x: 1311
+        y: 1215
+        width: 903
+        height: 898
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,8 +174,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07de8bee41d8e59f0800000000000000
-      internalID: -477789389410734736
+      spriteID: 8d071aa879fb29fd0800000000000000
+      internalID: -2336594599065063208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocks_sheet1_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 64
+        width: 903
+        height: 1039
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b1c1531744f6e20800000000000000
+      internalID: 3345968301172595511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocks_sheet1_3
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 61
+        width: 902
+        height: 902
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10877f013fd067600800000000000000
+      internalID: 465574949092292609
       vertices: []
       indices: 
       edges: []

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using BennyKok.Bootstrap;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeadZone : MonoBehaviour
 {
@@ -21,8 +22,15 @@ public class DeadZone : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player")) return;
 
-        player.transform.position = respawn.position;
+        // player.transform.position = respawn.position;
 
         CoreRef.Instance.playerEntity.OnDamage(1);
+
+        // if (CoreRef.Instance.playerEntity.hp == 0)
+        // {
+        // reload unity scene
+        Debug.Log("hey");
+        SceneManager.LoadScene(gameObject.scene.name);
+        // }
     }
 }

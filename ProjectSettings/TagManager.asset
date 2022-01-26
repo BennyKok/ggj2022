@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - CollectBox
   - UI
+  - Bridge
+  - Egg
   layers:
   - Default
   - TransparentFX
