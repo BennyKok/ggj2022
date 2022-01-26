@@ -35,6 +35,12 @@ public class Bridge : MonoBehaviour
     private void OnDestroy()
     {
         DayNightSwitcher.Instance.SwitchDayNightEvent -= OnSwitch;
+        if (lineAnimationCancelSource != null)
+        {
+            lineAnimationCancelSource.Cancel();
+            lineAnimationCancelSource.Dispose();
+            lineAnimationCancelSource = null;
+        }
     }
 
     private void OnDrawGizmos()
@@ -168,4 +174,5 @@ public class Bridge : MonoBehaviour
             lineAnimationCancelSource = null;
         }
     }
+
 }

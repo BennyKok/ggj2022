@@ -64,13 +64,14 @@ public class DayNightSwitcher : MonoBehaviour
     {
         if (dayNight == DayNightEnum.day)
         {
+            dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 180);
             currentDayNight = DayNightEnum.night;
         }
         else
         {
+            dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
             currentDayNight = DayNightEnum.day;
         }
-
         SwitchDayNight();
     }
 
@@ -169,30 +170,45 @@ public class DayNightSwitcher : MonoBehaviour
     private CancellationTokenSource rotateSkyCancelSource;
     private async void RotateSkyAsync(CancellationToken token)
     {
-        for(int i = 0; i < 36; i++)
+        try
         {
-            if (token.IsCancellationRequested)
+            for (int i = 0; i < 36; i++)
             {
-                if (currentDayNight == DayNightEnum.day)
+                if (token.IsCancellationRequested)
                 {
-                    dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    if (currentDayNight == DayNightEnum.day)
+                    {
+                        dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    }
+                    else
+                    {
+                        dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 180);
+                    }
+                    return;
                 }
-                else
-                {
-                    dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 180);
-                }
-                return;
+                dayNightRotator.transform.Rotate(Vector3.forward * 5);
+                await Task.Delay(10, token);
             }
-            dayNightRotator.transform.Rotate(Vector3.forward * 5);
-            await Task.Delay(10, token);
+            if (currentDayNight == DayNightEnum.day)
+            {
+                dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else
+            {
+                dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
         }
-        if (currentDayNight == DayNightEnum.day)
+        catch (System.OperationCanceledException) when (token.IsCancellationRequested)
         {
-            dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else
-        {
-            dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 180);
+            if (currentDayNight == DayNightEnum.day)
+            {
+                dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else
+            {
+                dayNightRotator.transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
+            return;
         }
     }
 }

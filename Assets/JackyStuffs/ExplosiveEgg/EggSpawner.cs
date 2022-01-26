@@ -9,6 +9,8 @@ public class EggSpawner : DayNightComponent
     public GameObject explosiveEggPrefab;
     public float seconds;
     public float eggExplodeSeconds;
+    public Transform toPositionSInceDrop;
+    public Vector3 offset;
 
     private CancellationTokenSource spawnEggCancelSource;
 
@@ -29,12 +31,21 @@ public class EggSpawner : DayNightComponent
 
         if (!isDay)
         {
-            spawnEggCancelSource = new CancellationTokenSource();
-            SpawnEggs(seconds, spawnEggCancelSource.Token);
+            if (toPositionSInceDrop == null)
+            {
+                spawnEggCancelSource = new CancellationTokenSource();
+                SpawnEggs(seconds, spawnEggCancelSource.Token);
+
+            }
+            else
+            {
+                spawnEggCancelSource = new CancellationTokenSource();
+                SpawnEggs(seconds, spawnEggCancelSource.Token, toPositionSInceDrop);
+            }
         }
     }
 
-    private async void SpawnEggs(float seconds, CancellationToken token)
+    private async void SpawnEggs(float seconds, CancellationToken token, Transform toPosition = null)
     {
         while (true)
         {
@@ -44,7 +55,23 @@ public class EggSpawner : DayNightComponent
             }
             GameObject temp = Instantiate(explosiveEggPrefab, transform.position, Quaternion.identity);
             temp.GetComponent<ExplosiveEgg>().seconds = eggExplodeSeconds;
+            if (toPosition != null)
+            {
+                temp.GetComponent<ExplosiveEgg>().originalPosition = transform.position;
+                temp.transform.position = toPosition.position + offset;
+            }
             await Task.Delay((int)(1000 * seconds));
+        }
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+        if (spawnEggCancelSource != null)
+        {
+            spawnEggCancelSource.Cancel();
+            spawnEggCancelSource.Dispose();
+            spawnEggCancelSource = null;
         }
     }
 }
