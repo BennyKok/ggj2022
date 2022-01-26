@@ -38,6 +38,7 @@ public class DeathScreen : Singleton<DeathScreen>
 
     public void OK(GameObject from)
     {
+        CoreRef.Instance.playerController.isControllable = false;
         this.from = from;
     }
 

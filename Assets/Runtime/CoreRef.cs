@@ -8,6 +8,7 @@ public class CoreRef : Singleton<CoreRef>
 {
     public GameObject player;
     public CombatEntity playerEntity;
+    public RigidbodyController playerController; 
     public bool enemy;
     public override void OnAwake()
     {
