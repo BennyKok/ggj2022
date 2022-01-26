@@ -44,7 +44,10 @@ public class OwlAI : DayNightComponent
         }
         else
         {
-            animator.Play("usual");
+            if (this is AggressiveOwlAI)
+                animator.Play("aggressiveUsual");
+            else
+                animator.Play("usual");
 
             BackRoute();
         }

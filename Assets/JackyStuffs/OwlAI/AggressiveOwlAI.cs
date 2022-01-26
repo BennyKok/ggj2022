@@ -128,7 +128,7 @@ public class AggressiveOwlAI : OwlAI
             if (token.IsCancellationRequested)
             {
                 if (DayNightSwitcher.Instance.currentDayNight == DayNightSwitcher.DayNightEnum.night)
-                    animator.Play("usual");
+                    animator.Play("aggressiveUsual");
 
                 if (warningSignHolder != null)
                 {
