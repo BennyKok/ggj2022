@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Threading.Tasks;
 using System.Threading;
 using UnityEngine.Events;
+using DG.Tweening;
 
 public class PlayerDayNightController : MonoBehaviour
 {
@@ -13,11 +14,13 @@ public class PlayerDayNightController : MonoBehaviour
     public Sprite dayOrb, nightOrb;
     public bool isCooldowning;
 
+    private AudioSource pencilAudio;
     public UnityEvent onSwitch;
 
     private void Awake()
     {
         Instance = this;
+        pencilAudio = transform.GetChild(4).GetComponent<AudioSource>();
     }
 
     [HideInInspector]public Vector3 topPosition;
@@ -59,10 +62,15 @@ public class PlayerDayNightController : MonoBehaviour
     }
 
     private CancellationTokenSource staffAnimCancelSource = null;
+    private Sequence pencilFadeSequence;
     private async void PerformStaffAnimation(CancellationToken token)
     {
         try
         {
+            pencilFadeSequence.Kill();
+            pencilFadeSequence = DOTween.Sequence();
+            pencilAudio.volume = 1;
+            pencilFadeSequence.Append(pencilAudio.DOFade(0, 0.5f));
             staffAnimator.SetBool("isWanding", true);
             await Task.Delay((int)(staffAnimator.GetCurrentAnimatorStateInfo(0).length * 1000), token);
             staffAnimator.SetBool("isWanding", false);
