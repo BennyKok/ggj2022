@@ -4,55 +4,50 @@ using UnityEngine;
 using System.Threading.Tasks;
 using System.Threading;
 
-public class FairySound : MonoBehaviour
+public class PlayerJumpSound : MonoBehaviour
 {
-    private AudioSource fairySound;
+    private AudioSource jumpSound;
 
     private void Awake()
     {
-        fairySound = GetComponent<AudioSource>();
+        jumpSound = GetComponent<AudioSource>();
     }
 
-    private void SetAudioPart(int part)
+    private async void SetAudioPart(int part)
     {
         if (playClipCancelSource != null)
         {
             playClipCancelSource.Cancel();
             playClipCancelSource.Dispose();
             playClipCancelSource = null;
+            await Task.Delay(10);
         }
         playClipCancelSource = new CancellationTokenSource();
         switch (part)
         {
             case 0:
-                PlayClip(0, 0.7f, playClipCancelSource.Token);
+                PlayClip(0, 0.455f, playClipCancelSource.Token);
                 break;
             case 1:
-                PlayClip(1.25f, 1.8f, playClipCancelSource.Token);
+                PlayClip(0.455f, 0.91f, playClipCancelSource.Token);
                 break;
             case 2:
-                PlayClip(2.25f, 2.8f, playClipCancelSource.Token);
+                PlayClip(0.91f, 1.365f, playClipCancelSource.Token);
                 break;
             case 3:
-                PlayClip(3.25f, 3.8f, playClipCancelSource.Token);
+                PlayClip(1.365f, 1.82f, playClipCancelSource.Token);
                 break;
             case 4:
-                PlayClip(4.25f, 4.8f, playClipCancelSource.Token);
+                PlayClip(1.82f, 2.275f, playClipCancelSource.Token);
                 break;
             case 5:
-                PlayClip(5.25f, 5.8f, playClipCancelSource.Token);
+                PlayClip(2.275f, 2.73f, playClipCancelSource.Token);
                 break;
             case 6:
-                PlayClip(6.25f, 6.8f, playClipCancelSource.Token);
+                PlayClip(2.73f, 3.185f, playClipCancelSource.Token);
                 break;
             case 7:
-                PlayClip(7.25f, 7.8f, playClipCancelSource.Token);
-                break;
-            case 8:
-                PlayClip(8.25f, 8.8f, playClipCancelSource.Token);
-                break;
-            case 9:
-                PlayClip(9.25f, 9.8f, playClipCancelSource.Token);
+                PlayClip(3.185f, 3.64f, playClipCancelSource.Token);
                 break;
         }
     }
@@ -70,26 +65,35 @@ public class FairySound : MonoBehaviour
     private CancellationTokenSource playClipCancelSource = null;
     private async void PlayClip(float start, float end, CancellationToken token)
     {
-        fairySound.Stop();
-        fairySound.time = start;
-        fairySound.Play();
+        jumpSound.Stop();
+        jumpSound.volume = 1;
+        jumpSound.time = start;
+        jumpSound.Play();
         do
         {
+            jumpSound.volume -= (end - start) / 30;
+            await Task.Yield();
             if (token.IsCancellationRequested)
             {
-                fairySound.Stop();
+                jumpSound.volume = 1;
+                jumpSound.Stop();
                 return;
             }
-            await Task.Yield();
-        } while (fairySound.time <= end);
-        fairySound.Stop();
+        } while (jumpSound.time <= end);
+        jumpSound.Stop();
+        if (playClipCancelSource != null)
+        {
+            playClipCancelSource.Cancel();
+            playClipCancelSource.Dispose();
+            playClipCancelSource = null;
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void JumpSound()
     {
-        int rand = Random.Range(0, 10);
-        if (other.tag == "Player")
+        if (playClipCancelSource == null)
         {
+            int rand = Random.Range(0, 8);
             SetAudioPart(rand);
         }
     }
