@@ -72,7 +72,7 @@ public class PlayerDayNightController : MonoBehaviour
             pencilAudio.volume = 1;
             pencilFadeSequence.Append(pencilAudio.DOFade(0, 0.5f));
             staffAnimator.SetBool("isWanding", true);
-            await Task.Delay((int)(staffAnimator.GetCurrentAnimatorStateInfo(0).length * 1000), token);
+            await Task.Delay((int)(0.5f * 1000), token);
             staffAnimator.SetBool("isWanding", false);
         }
         catch (System.OperationCanceledException) when (token.IsCancellationRequested)
