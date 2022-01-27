@@ -1,7 +1,37 @@
 fileFormatVersion: 2
 guid: d41a5b07646194049a0c81e363352f5b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6154347955124466350
+    second: birb_split_0
+  - first:
+      213: -6073115276352376775
+    second: birb_split_1
+  - first:
+      213: 3100134062500266729
+    second: birb_split_2
+  - first:
+      213: -4229348373985508127
+    second: birb_split_3
+  - first:
+      213: 5059229968784576185
+    second: birb_split_5
+  - first:
+      213: -2990915154445206911
+    second: birb_split_6
+  - first:
+      213: -8053310311121878970
+    second: birb_split_7
+  - first:
+      213: 4356250924988962700
+    second: birb_split_8
+  - first:
+      213: 7313464610051180629
+    second: birb_split_9
+  - first:
+      213: 8502935117999647291
+    second: birb_split_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +71,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +105,267 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: birb_split_0
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1121
+        width: 511
+        height: 288
+      alignment: 9
+      pivot: {x: 0.9761773, y: 0.52509564}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d87a6542d579aa0800000000000000
+      internalID: -6154347955124466350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: birb_split_1
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 832
+        width: 824
+        height: 816
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930b40935d5f7bba0800000000000000
+      internalID: -6073115276352376775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: birb_split_2
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 722
+        width: 238
+        height: 143
+      alignment: 9
+      pivot: {x: 0.95551616, y: 0.58423746}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2ca6f2183e50b20800000000000000
+      internalID: 3100134062500266729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: birb_split_3
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 851
+        width: 310
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4c739df065e45c0800000000000000
+      internalID: -4229348373985508127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: birb_split_5
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 318
+        width: 155
+        height: 139
+      alignment: 9
+      pivot: {x: 0.9196628, y: 0.985302}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be4a660adef53640800000000000000
+      internalID: 5059229968784576185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: birb_split_6
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 327
+        width: 100
+        height: 156
+      alignment: 9
+      pivot: {x: 0.60278624, y: 0.96121645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18af5f973822e76d0800000000000000
+      internalID: -2990915154445206911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: birb_split_7
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 333
+        width: 41
+        height: 180
+      alignment: 9
+      pivot: {x: 0.4582192, y: 0.98537546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6400797b0f4ec3090800000000000000
+      internalID: -8053310311121878970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: birb_split_8
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 431
+        width: 134
+        height: 120
+      alignment: 9
+      pivot: {x: 0.88352853, y: 0.90685934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c871f68c223847c30800000000000000
+      internalID: 4356250924988962700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: birb_split_9
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 411
+        width: 165
+        height: 176
+      alignment: 9
+      pivot: {x: 0.089897014, y: 0.92340606}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558cd7f7055ae7560800000000000000
+      internalID: 7313464610051180629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: birb_split_10
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 221
+        width: 135
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a2098707e700670800000000000000
+      internalID: 8502935117999647291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
