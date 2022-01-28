@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 473655081}
   playerEntity: {fileID: 473655082}
-  playerController: {fileID: 0}
+  playerController: {fileID: 5932055041996925639}
   enemy: 0
 --- !u!4 &165151364
 Transform:
@@ -2330,7 +2330,7 @@ MonoBehaviour:
     ModeOverride: 2
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7771248, y: 1}
+    m_SensorSize: {x: 1.7780405, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2794,6 +2794,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413f264d375922e43997efae88003554, type: 3}
+--- !u!114 &5932055041996925639 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5932055041693771366, guid: 413f264d375922e43997efae88003554, type: 3}
+  m_PrefabInstance: {fileID: 5932055041996925638}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473655081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2ba322fc9fff04389a42d8cafa57f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7594497708884201825
 PrefabInstance:
   m_ObjectHideFlags: 0
