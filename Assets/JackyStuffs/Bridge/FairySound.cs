@@ -25,34 +25,31 @@ public class FairySound : MonoBehaviour
         switch (part)
         {
             case 0:
-                PlayClip(0, 0.7f, playClipCancelSource.Token);
+                PlayClip(0, 1.1f, playClipCancelSource.Token);
                 break;
             case 1:
-                PlayClip(1.25f, 1.8f, playClipCancelSource.Token);
+                PlayClip(1.1f, 2.22f, playClipCancelSource.Token);
                 break;
             case 2:
-                PlayClip(2.25f, 2.8f, playClipCancelSource.Token);
+                PlayClip(2.22f, 3.33f, playClipCancelSource.Token);
                 break;
             case 3:
-                PlayClip(3.25f, 3.8f, playClipCancelSource.Token);
+                PlayClip(3.33f, 4.44f, playClipCancelSource.Token);
                 break;
             case 4:
-                PlayClip(4.25f, 4.8f, playClipCancelSource.Token);
+                PlayClip(4.44f, 5.55f, playClipCancelSource.Token);
                 break;
             case 5:
-                PlayClip(5.25f, 5.8f, playClipCancelSource.Token);
+                PlayClip(5.55f, 6.66f, playClipCancelSource.Token);
                 break;
             case 6:
-                PlayClip(6.25f, 6.8f, playClipCancelSource.Token);
+                PlayClip(6.66f, 7.77f, playClipCancelSource.Token);
                 break;
             case 7:
-                PlayClip(7.25f, 7.8f, playClipCancelSource.Token);
+                PlayClip(7.77f, 8.88f, playClipCancelSource.Token);
                 break;
             case 8:
-                PlayClip(8.25f, 8.8f, playClipCancelSource.Token);
-                break;
-            case 9:
-                PlayClip(9.25f, 9.8f, playClipCancelSource.Token);
+                PlayClip(8.88f, 9.99f, playClipCancelSource.Token);
                 break;
         }
     }
@@ -87,7 +84,7 @@ public class FairySound : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        int rand = Random.Range(0, 10);
+        int rand = Random.Range(0, 9);
         if (other.tag == "Player")
         {
             SetAudioPart(rand);
