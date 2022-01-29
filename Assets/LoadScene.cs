@@ -18,4 +18,9 @@ public class LoadScene : MonoBehaviour
         DeathScreen.Instance.gameObject.SetActive(true);
         DeathScreen.Instance.OK(Bootstrap.Instance.gameObject);
     }
+    
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
