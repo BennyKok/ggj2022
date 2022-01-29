@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
         {
             if (CoreRef.Instance.playerEntity.hp <= 0)
             {
-                CoreRef.Instance.playerEntity.ResetHealth();
+                // CoreRef.Instance.playerEntity.ResetHealth();
             }
         });
     }
