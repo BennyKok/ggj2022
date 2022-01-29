@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class EndingManager : MonoBehaviour
 {
     public Image fadeBlackImage;
+    public CreditRoll credit;
     private TextMeshProUGUI theEnd;
     public VideoPlayer stopMotion;
     private async void Awake()
@@ -29,7 +30,13 @@ public class EndingManager : MonoBehaviour
         await Task.Delay(2000);
         theEnd.gameObject.SetActive(true);
         await FadeBlackEffect();
-        await Task.Delay(4000);
+        await Task.Delay(2000);
+        theEnd.gameObject.SetActive(false);
+        credit.CreateRollingText();
+        credit.ingameText.text = credit.GenerateTextLogic();
+        credit.Show();
+        bool finished = await credit.ScrollCredit(credit.startPosition, credit.endPosition, credit.scrollSecond);
+
         SceneManager.LoadScene("startmenu");
     }
 

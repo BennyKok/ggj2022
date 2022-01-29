@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5976676041459950675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5976676041459950700}
+  - component: {fileID: 5976676041459950701}
+  m_Layer: 0
+  m_Name: CreditRoller 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5976676041459950700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5976676041459950675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5976676041459950701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5976676041459950675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7fb33ce8cca9bc469e5a5d6d110bd2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: -1500}
+  endPosition: {x: 0, y: 1200}
+  scrollSecond: 8
+  maxFontSize: 150
+  attachParent: {fileID: 0}
+  fontName:
+  - Pixel
+  - Arial
+  - Sketch
+  texts:
+  - jumpLine: 0
+    color: 0
+    font: 0
+    xOffset: 1.2
+    sizeReduce: 0
+    message: Thank You For Playing!
+  - jumpLine: 1
+    color: 0
+    font: 0
+    xOffset: 10.5
+    sizeReduce: 50
+    message: Creators
+  - jumpLine: 2
+    color: 2
+    font: 0
+    xOffset: 10.5
+    sizeReduce: 50
+    message: Benny Kok
+  - jumpLine: 1
+    color: 4
+    font: 0
+    xOffset: 10.5
+    sizeReduce: 50
+    message: Jeff Wong
+  - jumpLine: 1
+    color: 6
+    font: 0
+    xOffset: 11
+    sizeReduce: 50
+    message: Jintii
+  - jumpLine: 1
+    color: 8
+    font: 0
+    xOffset: 10.25
+    sizeReduce: 50
+    message: Karrix Lee
+  - jumpLine: 1
+    color: 4
+    font: 0
+    xOffset: 12
+    sizeReduce: 50
+    message: Wai
+  - jumpLine: 1
+    color: 2
+    font: 0
+    xOffset: 10.75
+    sizeReduce: 50
+    message: Jacky Wu
+  - jumpLine: 2
+    color: 2
+    font: 0
+    xOffset: 15
+    sizeReduce: 75
+    message: GG!
+  - jumpLine: 1
+    color: 0
+    font: 0
+    xOffset: 5
+    sizeReduce: 25
+    message: Global Game Jam
+  TextPrefab: {fileID: 218200062894911361, guid: f2e071b99d4ad7948a7087e9706d4c0a,
+    type: 3}
+  ingameText: {fileID: 0}
