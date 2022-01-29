@@ -21,7 +21,7 @@ public class DeadZone : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (!collision.gameObject.CompareTag("Player")) return;
-
+        if (gameObject.tag == "Owl" && DayNightSwitcher.Instance.currentDayNight == DayNightSwitcher.DayNightEnum.day) return;
         // player.transform.position = respawn.position;
 
         CoreRef.Instance.playerEntity.OnDamage(1);

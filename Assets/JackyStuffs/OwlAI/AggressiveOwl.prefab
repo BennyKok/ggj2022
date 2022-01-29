@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 7365335836476198853}
   - component: {fileID: 7365335836476198852}
   - component: {fileID: 7365335836476198861}
+  - component: {fileID: 1494815960868685240}
   m_Layer: 7
   m_Name: AggressiveOwl
-  m_TagString: Untagged
+  m_TagString: Owl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,5 +149,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   route: {fileID: 0}
+  waitTimePreStop: 0
   warningPrefab: {fileID: 7377276527542969235, guid: 61f908512cb4e7c4b9d27af2c8d52b9e, type: 3}
   detectRange: 15
+--- !u!114 &1494815960868685240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365335836476198862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfab02e56a106947a76affbfbfbd1b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  respawn: {fileID: 0}
