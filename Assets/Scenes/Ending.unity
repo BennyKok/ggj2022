@@ -311,6 +311,7 @@ MonoBehaviour:
   fadeBlackImage: {fileID: 558783879}
   credit: {fileID: 1222333892}
   stopMotion: {fileID: 558567272}
+  birdPrefab: {fileID: 911526382196974631, guid: e15d9b3e6c00adc40b4f2f2fde900509, type: 3}
 --- !u!1 &796799912
 GameObject:
   m_ObjectHideFlags: 0

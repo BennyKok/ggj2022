@@ -13,11 +13,13 @@ public class EndingManager : MonoBehaviour
     public CreditRoll credit;
     private TextMeshProUGUI theEnd;
     public VideoPlayer stopMotion;
+    public GameObject birdPrefab;
+    private Animator birdHolder;
+
     private async void Awake()
     {
         theEnd = fadeBlackImage.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         theEnd.gameObject.SetActive(false);
-
         stopMotion.time = 0;
         stopMotion.Play();
         stopMotion.Pause();
@@ -26,6 +28,20 @@ public class EndingManager : MonoBehaviour
         await Task.Delay(4000);
         await FadeTransparentEffect();
         stopMotion.Play();
+
+        do
+        {
+            await Task.Yield();
+        } while (stopMotion.frame < 75);
+        stopMotion.Pause();
+        ShowBird();
+        do
+        {
+            await Task.Yield();
+        } while (birdHolder.GetCurrentAnimatorStateInfo(0).normalizedTime < 1);
+        Destroy(birdHolder.gameObject);
+        stopMotion.Play();
+
         do { await Task.Yield(); } while (stopMotion.isPlaying);
         await Task.Delay(2000);
         theEnd.gameObject.SetActive(true);
@@ -67,5 +83,10 @@ public class EndingManager : MonoBehaviour
         }
         fadeBlackImage.color = new Color32(8, 3, 20, 255);
         theEnd.color = new Color32(255, 255, 255, 255);
+    }
+
+    private void ShowBird()
+    {
+        birdHolder = Instantiate(birdPrefab, Vector3.zero, Quaternion.identity).GetComponent<Animator>();
     }
 }
